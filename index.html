@@ -153,54 +153,90 @@
     /* 背景となる黄色いバー */
 .campaign-section {
   background-color: #fff4c2;
-  padding: 40px 20px; /* ← 80pxから40pxに */
+  padding: 32px 16px; /* 帯も半分くらいの高さに */
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif; /* モダンで読みやすい */
 }
 
 /* 白いボックス部分 */
 .campaign-box {
   background-color: #ffffff;
   border-radius: 16px;
-  padding: 20px 20px; /* ← かなりコンパクトに */
+  padding: 28px 24px;
   max-width: 500px;
   width: 100%;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* テキストや価格など */
-.campaign-box h2 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.features {
-  font-size: 0.9rem;
-  margin: 12px 0;
-}
-
-.features li {
-  margin-bottom: 4px;
-}
-
-.deadline {
   font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 見出し */
+.campaign-box h2 {
+  font-size: 1.5rem;
+  color: #444;
   margin-bottom: 16px;
 }
 
-.cta-button {
-  padding: 10px 20px;
+/* 価格表示 */
+.price {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 6px;
+}
+
+.new-price {
+  color: #e67e22;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* 箇条書き（きちんと左に寄せる） */
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0;
+  color: #555;
+  text-align: left;
+  display: inline-block;
+}
+
+.features li::before {
+  content: '✔️';
+  margin-right: 8px;
+}
+
+/* 締切 */
+.deadline {
+  font-weight: bold;
+  color: #c0392b;
+  margin-bottom: 20px;
   font-size: 0.95rem;
+}
+
+/* CTAボタン（元のレモン色に復元） */
+.cta-button {
+  background-color: #f4c430;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  background-color: #e2b200;
 }
     
   </style>
