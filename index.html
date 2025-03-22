@@ -6,23 +6,22 @@
   <title>Maddie English</title>
 <style>
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #fff9c4, #fff);
-    padding: 14px max(4vw, 20px);
-    position: fixed;
-    top: 50px;
-    width: 100%;
-    z-index: 1000;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    font-weight: 600;
-    font-size: 1em;
-    box-sizing: border-box;
-    transform: translateY(0);
-    transition: transform 0.2s ease-out;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #fff9c4, #fff);
+  padding: 14px max(4vw, 20px);
+  position: fixed;
+  top: var(--navbar-top, 50px); /* ← スクロールに応じて動かす */
+  width: 100%;
+  z-index: 1000;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-weight: 600;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: top 0.3s ease-out;
+}
 
   .nav-logo {
     height: 44px;
@@ -350,21 +349,26 @@
 
   <!-- ✅ ナビゲーション位置制御 -->
 <script>
-  const navbar = document.querySelector('.navbar');
-  const topBar = document.querySelector('.top-bar');
-  const topBarHeight = topBar ? topBar.offsetHeight : 0;
-
   document.addEventListener('DOMContentLoaded', () => {
-    navbar.style.transform = `translateY(${topBarHeight}px)`;
-  });
+    const navbar = document.querySelector('.navbar');
+    const topBar = document.querySelector('.top-bar');
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const clamped = Math.max(0, topBarHeight - scrollY); // 下限0に制限
-    navbar.style.transform = `translateY(${clamped}px)`;
+    const topBarHeight = topBar ? topBar.offsetHeight : 0;
+
+    // 初期位置を変数で記憶
+    document.documentElement.style.setProperty('--navbar-top', topBarHeight + 'px');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        // スクロールしたら上に吸着
+        document.documentElement.style.setProperty('--navbar-top', '0px');
+      } else {
+        // 最上部に戻ったら元の位置に戻す
+        document.documentElement.style.setProperty('--navbar-top', topBarHeight + 'px');
+      }
+    });
   });
 </script>
-
 
 <script>
   function toggleMenu() {
