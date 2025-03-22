@@ -114,6 +114,25 @@
     Maddie Englishは、英語に悩むあなたのための英会話レッスンです
   </h2>
 
+  .animate-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 60%;
+  height: 4px;
+  background-color: #ffd54f;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  border-radius: 2px;
+  transition: transform 0.6s ease-out;
+  transition-delay: 0.5s;
+}
+
+.animate-underline.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
   <div class="real-voice-grid" style="
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -248,6 +267,7 @@
   </script>
 
   <!-- ✅ スクロール時ナビ位置調整 -->
+        
   <script>
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
@@ -261,6 +281,28 @@
       }
     });
   </script>
+        
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const target = document.querySelector(".animate-underline");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (target) {
+      observer.observe(target);
+    }
+  });
+</script>
 
 </body>
 </html>
