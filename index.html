@@ -153,24 +153,44 @@
     /* 背景となる黄色いバー */
 .campaign-section {
   background-color: #fff4c2;
-  padding: 24px 12px; /* 帯も半分くらいの高さに */
+  padding: 48px 16px; /* ← ここだけ少し増やします（ラベルを浮かせる余裕） */
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif; /* モダンで読みやすい */
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
 }
 
-/* 白いボックス部分 */
 .campaign-box {
   background-color: #ffffff;
   border-radius: 16px;
-  padding: 20px 20px;
+  padding: 32px 24px 24px; /* ← 上部少し余裕持たせます */
   max-width: 500px;
   width: 100%;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
   font-size: 0.95rem;
   line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+.campaign-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.campaign-heading {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  z-index: 2;
 }
 
 /* 見出し */
