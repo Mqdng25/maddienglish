@@ -20,7 +20,7 @@
     font-weight: 600;
     font-size: 1em;
     box-sizing: border-box;
-    transition: top 0.2s ease;
+    transition: top 0.3s ease;
   }
 
   .nav-logo {
@@ -360,7 +360,7 @@
 
   // スクロール時に動かす
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 40) {
       navbar.style.top = '0';
     } else {
       navbar.style.top = topBarHeight + 'px';
