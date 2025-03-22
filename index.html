@@ -216,37 +216,54 @@
   }
 }
     
-.recommendation {
+        /* こんな方におすすめ */
+.recommendation-with-image {
   background: #fffef8;
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 60px 20px;
 }
 
-.recommendation h2 {
-  text-align: center;
+.recommend-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.recommend-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recommend-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.recommend-content h2 {
   font-size: 1.6em;
   color: #b35400;
   margin-bottom: 30px;
 }
 
 .recommend-item {
-  margin-bottom: 30px;
-  padding: 20px;
   background-color: #fff;
   border-left: 5px solid #ffcd1f;
   border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .user-voice {
   font-style: italic;
-  margin-bottom: 10px;
   color: #555;
-  position: relative;
+  margin-bottom: 8px;
   padding-left: 20px;
+  position: relative;
 }
 
 .user-voice::before {
@@ -262,17 +279,22 @@
   color: #333;
 }
 
-@media (max-width: 600px) {
-  .recommendation {
-    padding: 30px 15px;
+@media (max-width: 768px) {
+  .recommend-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .recommendation h2 {
+  .recommend-image img {
+    max-width: 100%;
+  }
+
+  .recommend-content h2 {
     font-size: 1.3em;
+    text-align: center;
   }
 }
-    
-    /* こんな方におすすめ */
+
   </style>
 </head>
 <body>
@@ -323,29 +345,37 @@
 </section>
   
   <!--こんなひとにおすすめ-->
-<section class="recommendation">
-  <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
+<section class="recommendation-with-image">
+  <div class="recommend-wrapper">
+    <div class="recommend-image">
+      <img src="https://images.unsplash.com/photo-1590080876400-df89f6aaec95?auto=format&fit=crop&w=600&q=80" alt="悩んでいる学習者のイメージ">
+    </div>
+    <div class="recommend-content">
+      <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
 
-  <div class="recommend-item">
-    <div class="user-voice">「中学英語もあやふやで、自信がありません。会話となると頭が真っ白になります。」</div>
-    <p class="recommend-text">🧡 <strong>やさしい英語入門コース</strong> で、日本語も交えながらゆっくり丁寧にスタートできます。</p>
-  </div>
+      <div class="recommend-item">
+        <div class="user-voice">「中学英語もあやふやで、自信がありません。会話となると頭が真っ白になります。」</div>
+        <p class="recommend-text">🧡 <strong>やさしい英語入門コース</strong> で、日本語も交えながらゆっくり丁寧にスタートできます。</p>
+      </div>
 
-  <div class="recommend-item">
-    <div class="user-voice">「文法はある程度わかるのに、実際に話すとなると頭が回らなくなってしまいます。」</div>
-    <p class="recommend-text">💬 <strong>在宅留学スピーキングコース</strong> で、実践的な会話トレーニングを。自宅で英語漬け体験！</p>
-  </div>
+      <div class="recommend-item">
+        <div class="user-voice">「文法はある程度わかるのに、実際に話すとなると頭が回らなくなってしまいます。」</div>
+        <p class="recommend-text">💬 <strong>在宅留学スピーキングコース</strong> で、実践的な会話トレーニングを。自宅で英語漬け体験！</p>
+      </div>
 
-  <div class="recommend-item">
-    <div class="user-voice">「カタカナ英語になってしまい、通じないのが怖くて話せません。」</div>
-    <p class="recommend-text">🔊 <strong>発音特化コース</strong> なら、毎週の発音トレーニング＆個別フィードバックで着実にレベルアップ。</p>
-  </div>
+      <div class="recommend-item">
+        <div class="user-voice">「カタカナ英語になってしまい、通じないのが怖くて話せません。」</div>
+        <p class="recommend-text">🔊 <strong>発音特化コース</strong> なら、毎週の発音トレーニング＆個別フィードバックで着実にレベルアップ。</p>
+      </div>
 
-  <div class="recommend-item">
-    <div class="user-voice">「英検や試験対策がしたい！将来のために英語力全体を高めたいです。」</div>
-    <p class="recommend-text">📚 <strong>総合スキルアップコース</strong> なら、4技能をバランスよく伸ばして、テスト対策もバッチリ。</p>
+      <div class="recommend-item">
+        <div class="user-voice">「英検や試験対策がしたい！将来のために英語力全体を高めたいです。」</div>
+        <p class="recommend-text">📚 <strong>総合スキルアップコース</strong> なら、4技能をバランスよく伸ばして、テスト対策もバッチリ。</p>
+      </div>
+    </div>
   </div>
 </section>
+
 
   <!-- 🧾 コース紹介 -->
   <section id="courses">
