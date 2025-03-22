@@ -150,7 +150,71 @@
       transform: translateX(-50%) scaleX(1);
     }
 
-    /* 他のスタイルは後続で送ります！ */
+    .campaign {
+  background-color: #fff9e6;
+  border-radius: 16px;
+  padding: 48px 24px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.campaign-content h2 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.new-price {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.features li {
+  margin-bottom: 8px;
+}
+
+.deadline {
+  font-weight: bold;
+  color: #c0392b;
+  margin-bottom: 24px;
+}
+
+.cta-button {
+  background-color: #f4c430;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e2b200;
+}
+
   </style>
 </head>
 <body>
@@ -187,23 +251,21 @@
     </div>
   </header>
   <!-- ✅ キャンペーンセクション -->
-  <section class="campaign" style="background: linear-gradient(135deg, #fff176, #ffb74d); padding: 20px 12px;">
-    <div style="background: #fff; padding: 20px 16px; max-width: 680px; margin: 0 auto; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
-      <h2 style="font-size: 1.3em; margin-bottom: 12px;">今だけ限定！英会話キャンペーン実施中</h2>
-      <div style="display: inline-block; background: #fff8e1; padding: 10px 18px; border-radius: 30px; border: 1px solid #e0a800; color: #b35400; margin: 12px 0; font-size: 1em;">
-        <span style="text-decoration: line-through; color: #999; margin-right: 8px;">通常価格 69,800円</span>
-        → 今だけ <strong style="font-size: 1.6em; font-weight: 700; color: #b35400;">40,000円（税込）</strong>
-      </div>
-      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
-        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">マンツーマンレッスン</div>
-        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">コーチング付き</div>
-        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">教材費無料</div>
-      </div>
-      <div style="margin-top: 14px; font-weight: bold; color: #c62828; font-size: 0.9em;">
-        📅 5月31日までの期間限定！
-      </div>
-    </div>
-  </section>
+  <section class="campaign">
+  <div class="campaign-content">
+    <h2>🌼 今だけ！英会話キャンペーン実施中</h2>
+    <p class="price">
+      通常価格 <span class="old-price">69,800円</span> → <span class="new-price">今だけ 40,000円（税込）</span>
+    </p>
+    <ul class="features">
+      <li>✔️ マンツーマンレッスン</li>
+      <li>✔️ コーチング付き</li>
+      <li>✔️ 教材費無料</li>
+    </ul>
+    <p class="deadline">📅 5月31日までの期間限定！</p>
+    <a href="#contact" class="cta-button">今すぐ申し込む</a>
+  </div>
+</section>
 
   <!-- ✅ こんな方におすすめ（Real Voice 上2・下2） -->
   <section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
