@@ -308,13 +308,11 @@
   .voice-text {
     display: inline-block;
     font-size: 1.05em;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal; /* ← 改行OKに戻す */
+    text-align: center;
+    max-width: 90%;
   }
 }
-
     
   </style>
 </head>
@@ -413,6 +411,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+
     "
   >
     <div
