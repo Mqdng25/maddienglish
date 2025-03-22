@@ -130,91 +130,85 @@
     /* 🎉 お得キャンペーンセクション */
 .campaign {
   background: linear-gradient(135deg, #fff176, #ffb74d);
-  padding: 30px 15px; /* ← 高さをコンパクトに */
+  padding: 30px 15px;
   text-align: center;
 }
 
 .campaign-box {
-  background: white;
-  padding: 30px 20px; /* ← 高さ抑えめ */
+  background: #fff;
+  padding: 24px 20px;
   max-width: 700px;
   margin: 0 auto;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .campaign-box h2 {
-  font-size: 1.4em; /* 少し小さくしてコンパクトに */
-  margin-bottom: 15px;
-  color: #b35400;
+  font-size: 1.4em;
+  margin-bottom: 16px;
+  color: #333;
 }
 
 .price-box {
   display: inline-block;
-  background: linear-gradient(135deg, #fff8e1, #ffecb3);
-  padding: 12px 20px;
-  border-radius: 40px;
-  border: 2px solid gold;
-  font-size: 1.2em;
+  background: #fff8e1;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #e0a800;
+  font-size: 1.1em;
   font-weight: bold;
   color: #b35400;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-  margin: 15px 0;
+  margin: 16px 0;
   position: relative;
 }
 
-.price-box::after {
-  content: "✨";
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 1.5em;
-}
+/* ✨ アイコン削除：::after 削除済み */
 
 .price-box .original {
   text-decoration: line-through;
-  color: #888;
-  margin-right: 10px;
+  color: #999;
+  margin-right: 8px;
 }
 
 .features {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
   margin-top: 20px;
 }
 
 .feature {
-  background: #fffde7;
-  padding: 10px 16px;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  font-size: 1em;
+  background: #fffdf0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .deadline {
   margin-top: 20px;
   font-weight: bold;
-  color: #d32f2f;
-  font-size: 1em;
+  color: #c62828;
+  font-size: 0.95em;
 }
 
 @media (max-width: 600px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .campaign-box h2 {
     font-size: 1.2em;
   }
 
   .price-box {
-    font-size: 1.1em;
-    padding: 10px 16px;
+    font-size: 1em;
+    padding: 8px 14px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
     
         /* こんな方におすすめ */
 .real-voices {
