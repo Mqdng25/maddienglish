@@ -5,53 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maddie English</title>
 
-  <!-- Google Fonts（必要に応じて） -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
-    /* === 基本スタイル === */
     body {
       margin: 0;
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: #fffef5;
       color: #333;
-      line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    /* アンダーライン */
+    .animate-underline {
+      position: relative;
       display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 20px;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 60px 20px;
       text-align: center;
+      padding-bottom: 20px;
+      font-size: 1.5em;
+      margin-bottom: 40px;
+      color: #222;
     }
 
-@media (max-width: 768px) {
-  .real-voice-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
+    .animate-underline::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 60%;
+      height: 4px;
+      background-color: #ffd54f;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      border-radius: 2px;
+      transition: transform 0.6s ease-out;
+      transition-delay: 0.5s;
+    }
 
+    .animate-underline.active::after {
+      transform: translateX(-50%) scaleX(1);
+    }
 
+    /* 他のスタイルは後続で送ります！ */
   </style>
 </head>
-
 <body>
 
-  <!-- ✅ トップバー（キャンペーン・ログインボタン） -->
+  <!-- ✅ トップバー（キャンペーン告知＆ボタン） -->
   <div class="top-bar" style="background-color:#ffcd1f; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
     <div style="font-weight:bold; font-size:1em;">今だけ限定キャンペーン実施中！</div>
     <div>
@@ -71,7 +68,7 @@
     </div>
   </div>
 
-  <!-- ✅ ヒーローヘッダー -->
+  <!-- ✅ ヘッダー画像＋キャッチコピー -->
   <header id="home" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; height: 80vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 0;"></div>
     <div style="position: relative; z-index: 1; color: white; background: rgba(0, 0, 0, 0.4); padding: 30px; border-radius: 12px;">
@@ -80,7 +77,6 @@
       <p>楽しく、まっすぐ、伝わる英語</p>
     </div>
   </header>
-
   <!-- ✅ キャンペーンセクション -->
   <section class="campaign" style="background: linear-gradient(135deg, #fff176, #ffb74d); padding: 20px 12px;">
     <div style="background: #fff; padding: 20px 16px; max-width: 680px; margin: 0 auto; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
@@ -100,76 +96,52 @@
     </div>
   </section>
 
-  <!-- ✅ こんな方におすすめセクション -->
-<section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
-  <h2 class="animate-underline" style="
-    font-size: 1.5em;
-    color: #222;
-    position: relative;
-    display: block;
-    text-align: center;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-  ">
-    Maddie Englishは、英語に悩むあなたのための英会話レッスンです
-  </h2>
+  <!-- ✅ こんな方におすすめ（Real Voice 上2・下2） -->
+  <section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
+    <h2 class="animate-underline">
+      Maddie Englishは、英語に悩むあなたのための英会話レッスンです
+    </h2>
 
-  .animate-underline::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  width: 60%;
-  height: 4px;
-  background-color: #ffd54f;
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
-  border-radius: 2px;
-  transition: transform 0.6s ease-out;
-  transition-delay: 0.5s;
-}
+    <div class="real-voice-grid" style="
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    ">
+      <!-- Real Voice 1 -->
+      <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          中学英語もあやふやで、自信がありません。
+        </div>
+      </div>
 
-.animate-underline.active::after {
-  transform: translateX(-50%) scaleX(1);
-}
+      <!-- Real Voice 2 -->
+      <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          文法はわかるのに、話すとなると口が止まる…
+        </div>
+      </div>
 
-  <div class="real-voice-grid" style="
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-  ">
-    <!-- Real Voice 1 -->
-    <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
-      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
-      <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
-        中学英語もあやふやで、自信がありません。
+      <!-- Real Voice 3 -->
+      <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          発音がカタカナになってしまって通じない…
+        </div>
+      </div>
+
+      <!-- Real Voice 4 -->
+      <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          英検や試験のために、総合力を伸ばしたい！
+        </div>
       </div>
     </div>
-
-    <!-- Real Voice 2 -->
-    <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
-      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
-      <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
-        文法はわかるのに、話すとなると口が止まる…
-      </div>
-    </div>
-
-    <!-- Real Voice 3 -->
-    <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
-      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
-      <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
-        発音がカタカナになってしまって通じない…
-      </div>
-    </div>
-
-    <!-- Real Voice 4 -->
-    <div style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
-      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
-      <div style="position: relative; color: #
-
-
+  </section>
   <!-- ✅ 教材紹介 -->
   <section>
     <h2 style="text-align:center;">教材紹介</h2>
@@ -178,7 +150,7 @@
   </section>
 
   <!-- ✅ コース比較表 -->
-  <section>
+  <section id="courses">
     <h2 style="text-align:center;">コース比較表</h2>
     <table style="margin: 0 auto; border-collapse: collapse; width: 90%; max-width: 800px;">
       <tr style="background: #fff8e1;">
@@ -243,7 +215,7 @@
     &copy; 2025 Maddie English | All rights reserved
   </footer>
 
-  <!-- ✅ アンダーラインアニメーション -->
+  <!-- ✅ アンダーライン用 JS -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const target = document.querySelector(".animate-underline");
@@ -266,8 +238,7 @@
     });
   </script>
 
-  <!-- ✅ スクロール時ナビ位置調整 -->
-        
+  <!-- ✅ ナビゲーション位置制御 -->
   <script>
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
@@ -281,28 +252,6 @@
       }
     });
   </script>
-        
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const target = document.querySelector(".animate-underline");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (target) {
-      observer.observe(target);
-    }
-  });
-</script>
 
 </body>
 </html>
