@@ -94,3 +94,148 @@
     th, td {
       border: 1px solid #ddd;
       padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ffecb3;
+    }
+
+    .testimonial {
+      background-color: #fffde7;
+      border-left: 6px solid #fbc02d;
+      margin: 20px 0;
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background-color: #ffe082;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      table {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Maddie English ロゴ" />
+    <h1>Maddie English</h1>
+    <p>楽しく、まっすぐ、伝わる英語<br>話せるようになるって、嬉しい！</p>
+  </header>
+
+  <section class="hero">
+    <h2>英語、今からでも遅くない。</h2>
+    <p>「読む・聞く・話す・書く」全スキルを、あなたのペースで楽しく習得しましょう。</p>
+    <img class="image-banner" src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80" alt="英語学習イメージ">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Maddie English のコース一覧</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>やさしい英語入門</h3>
+        <p>ゼロからでも安心。アルファベット・基本フレーズから始める超入門コース。</p>
+      </div>
+      <div class="course-card">
+        <h3>リスニング & スピーキング特訓</h3>
+        <p>「知ってるのに話せない」人へ。発音＆会話トレーニングで自信アップ。</p>
+      </div>
+      <div class="course-card">
+        <h3>発音トレーニング</h3>
+        <p>カタカナ英語から卒業！通じる発音とリズムを身につける集中コース。</p>
+      </div>
+      <div class="course-card">
+        <h3>総合スキルアップ</h3>
+        <p>読む・書く・話す・聞くをバランスよく伸ばしたい人へ。全方位対応型。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">コース比較表</h2>
+    <table>
+      <tr>
+        <th>コース名</th>
+        <th>対象レベル</th>
+        <th>特徴</th>
+        <th>1回の時間</th>
+        <th>オンライン</th>
+      </tr>
+      <tr>
+        <td>やさしい英語入門</td>
+        <td>完全初心者</td>
+        <td>基礎フレーズ・発音</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>リスニング＆スピーキング</td>
+        <td>中級</td>
+        <td>会話特訓</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>発音トレーニング</td>
+        <td>初中級</td>
+        <td>発音矯正</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>スキル総合アップ</td>
+        <td>中〜上級</td>
+        <td>全スキル対応</td>
+        <td>60分</td>
+        <td>〇</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">教材紹介</h2>
+    <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
+    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">受講者の声</h2>
+    <div class="testimonial">
+      <strong>まゆこ さん（30代 / OL）</strong>
+      英語は苦手意識がありましたが、Maddie先生のレッスンはとても楽しくて、続けられました！
+    </div>
+    <div class="testimonial">
+      <strong>たかし さん（40代 / 会社員）</strong>
+      発音トレーニングを受けて、自信を持って話せるようになりました！
+    </div>
+    <div class="testimonial">
+      <strong>ゆか さん（高校生）</strong>
+      テスト対策もしてもらえて、学校の成績も上がりました！
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Maddie English | All rights reserved
+  </footer>
+
+</body>
+</html>
