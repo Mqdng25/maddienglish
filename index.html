@@ -157,6 +157,7 @@
   display: flex;
   justify-content: center;
   font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
 }
 
 .campaign-box {
@@ -260,6 +261,13 @@
 .cta-button:hover {
   background-color: #c0392b;
 }
+    @media (max-width: 480px) {
+  .campaign-heading {
+    white-space: normal; /* ← スマホで自然に折り返しOKに */
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
     
   </style>
 </head>
@@ -306,7 +314,7 @@
       <div class="campaign-heading">🌼 今だけ！英会話キャンペーン実施中</div>
 
       <p class="price">
-        <span class="old-price">69,800円</span> → <span class="new-price">今だけ 40,000円（税込）</span>
+        <span class="old-price">69,800円</span> → <span class="new-price">40,000円（税込）</span>
       </p>
       <ul class="features">
         <li>マンツーマンレッスン</li>
