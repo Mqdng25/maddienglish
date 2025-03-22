@@ -223,7 +223,23 @@
 .real-voices h2 {
   font-size: 1.5em;
   margin-bottom: 40px;
-  color: #222; /* ← 黒に近い落ち着いた色 */
+  color: #222;
+  position: relative; /* ← これが重要！ */
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* スタイリッシュなアンダーライン */
+.real-voices h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  background-color: #ffd54f; /* 明るいパステルイエロー */
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .real-voice-grid.fixed-layout {
