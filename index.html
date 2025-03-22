@@ -4,336 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maddie English</title>
+
+  <!-- Google Fonts（必要に応じて） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    /* === 基本スタイル === */
     body {
       margin: 0;
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       background-color: #fffef5;
       color: #333;
+      line-height: 1.6;
     }
 
-    /* トップバー */
-    .top-bar {
-      background-color: #ffcd1f;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .top-bar .top-logo {
-      font-weight: bold;
-      font-size: 1em;
-    }
-
-    .top-bar .top-buttons a {
-      margin-left: 10px;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      color: #333;
-      border: 1px solid #333;
-      background-color: #fff;
-      transition: 0.1s;
     }
 
-    .top-bar .top-buttons a:hover {
-      background-color: #f5f5f5;
+    h1, h2, h3 {
+      margin: 0 0 20px;
+      font-weight: 700;
     }
 
-    /* ナビゲーションバー */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 10px 20px;
-      position: fixed;
-      top: 50px;
-      width: 100%;
-      z-index: 1000;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: top 0.2s ease;
-    }
-
-    .navbar img {
-      height: 40px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #e65100;
-    }
-
-    /* ヘッダー画像 */
-    .hero-header {
-      background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    section {
+      padding: 60px 20px;
       text-align: center;
-      padding-top: 60px;
     }
-
-    .hero-header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
-    .hero-overlay {
-      position: relative;
-      z-index: 1;
-      color: white;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .hero-overlay img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-
-    .hero-overlay h1 {
-      font-size: 2.5em;
-      margin: 0 0 10px;
-    }
-
-    .hero-overlay p {
-      font-size: 1.2em;
-    }
-
-    /* 🎉 お得キャンペーンセクション */
-.campaign {
-  background: linear-gradient(135deg, #fff176, #ffb74d);
-  padding: 20px 12px; /* ← 縦幅をさらに縮小 */
-  text-align: center;
-}
-
-.campaign-box {
-  background: #fff;
-  padding: 20px 16px; /* ← 内側の余白も減らす */
-  max-width: 680px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-.campaign-box h2 {
-  font-size: 1.3em; /* ↓ テキスト少し小さめ */
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.price-box {
-  display: inline-block;
-  background: #fff8e1;
-  padding: 10px 18px;
-  border-radius: 30px;
-  border: 1px solid #e0a800;
-  color: #b35400;
-  margin: 12px 0;
-  font-size: 1em;
-  font-weight: normal;
-}
-
-.price-box .original {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 8px;
-  font-size: 0.9em;
-}
-
-.price-box strong {
-  font-size: 1.6em; /* ← ここが重要！価格を大きく表示 */
-  font-weight: 700;
-  color: #b35400;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.feature {
-  background: #fffdf0;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-}
-
-.deadline {
-  margin-top: 14px;
-  font-weight: bold;
-  color: #c62828;
-  font-size: 0.9em;
-}
-
-@media (max-width: 600px) {
-  .campaign-box h2 {
-    font-size: 1.1em;
-  }
-
-  .price-box {
-    font-size: 0.95em;
-    padding: 6px 12px;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-    
-        /* こんな方におすすめ */
-.real-voices {
-  background: #fffef8;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.real-voices h2 {
-  font-size: 1.5em;
-  margin-bottom: 40px;
-  color: #222;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 12px;
-  overflow: hidden; /* ← 追加：アニメーションに必要 */
-}
-
-/* アニメーション定義 */
-.animate-underline {
-  font-size: 1.5em;
-  margin-bottom: 40px;
-  color: #222;
-  position: relative;
-  display: block;
-  text-align: center;
-  padding-bottom: 20px; /* 余白も調整 */
-}
-
-.animate-underline::after {
-  content: "";
-  position: absolute;
-  bottom: -8px; /* 🔻 ← ラインを少し下に下げる */
-  left: 50%;
-  width: 60%;
-  height: 4px;
-  background-color: #ffd54f;
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
-  border-radius: 2px;
-  transition: transform 0.6s ease-out;
-  transition-delay: 0.5s; /* 🕒 ← 出現を遅らせる */
-}
-
-.animate-underline.active::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
-.real-voice-grid.fixed-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.real-voice-card {
-  position: relative;
-  height: 280px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.real-voice-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.real-voice-text {
-  position: relative;
-  color: #fff;
-  font-size: 1.1em;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  font-style: italic;
-  z-index: 2;
-  max-width: 90%;
-  backdrop-filter: blur(3px);
-}
-
-@media (max-width: 768px) {
-  .real-voice-grid.fixed-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .real-voice-card {
-    height: 220px;
-  }
-
-  .real-voice-text {
-    font-size: 0.95em;
-    padding: 16px;
-  }
-}
 
   </style>
 </head>
+
 <body>
 
-  <!-- トップバー -->
-  <div class="top-bar">
-    <div class="top-logo">今だけ限定キャンペーン実施中！</div>
-    <div class="top-buttons">
-      <a href="#trial">無料体験</a>
-      <a href="#login">ログイン</a>
+  <!-- ✅ トップバー（キャンペーン・ログインボタン） -->
+  <div class="top-bar" style="background-color:#ffcd1f; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <div style="font-weight:bold; font-size:1em;">今だけ限定キャンペーン実施中！</div>
+    <div>
+      <a href="#trial" style="margin-left:10px; text-decoration:none; font-weight:bold; padding:6px 12px; border-radius:6px; font-size:0.9em; color:#333; border:1px solid #333; background-color:#fff;">無料体験</a>
+      <a href="#login" style="margin-left:10px; text-decoration:none; font-weight:bold; padding:6px 12px; border-radius:6px; font-size:0.9em; color:#333; border:1px solid #333; background-color:#fff;">ログイン</a>
     </div>
   </div>
 
-  <!-- ナビゲーション -->
-  <div class="navbar">
-    <img src="logo.png" alt="Maddie English ロゴ">
-    <div class="nav-links">
+  <!-- ✅ ナビゲーション -->
+  <div class="navbar" style="display:flex; justify-content:space-between; align-items:center; background-color:rgba(255,255,255,0.95); padding:10px 20px; position:fixed; top:50px; width:100%; z-index:1000; flex-wrap:wrap; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <img src="logo.png" alt="Maddie English ロゴ" style="height:40px;">
+    <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
       <a href="#home">ホーム</a>
       <a href="#courses">コース紹介</a>
       <a href="#about">講師紹介</a>
@@ -341,160 +64,180 @@
     </div>
   </div>
 
-  <!-- ヘッダー -->
-  <header class="hero-header" id="home">
-    <div class="hero-overlay">
-      <img src="logo.png" alt="ロゴ">
+  <!-- ✅ ヒーローヘッダー -->
+  <header id="home" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; height: 80vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 0;"></div>
+    <div style="position: relative; z-index: 1; color: white; background: rgba(0, 0, 0, 0.4); padding: 30px; border-radius: 12px;">
+      <img src="logo.png" alt="ロゴ" style="width: 100px; margin-bottom: 20px;">
       <h1>Maddie English</h1>
       <p>楽しく、まっすぐ、伝わる英語</p>
     </div>
   </header>
 
-<section class="campaign">
-  <div class="campaign-box">
-    <h2>🎉 今だけ限定！英会話キャンペーン実施中</h2>
-    <div class="price-box">
-      <span class="original">通常価格 69,800円</span>
-      → 今だけ <strong>40,000円（税込）</strong>
+  <!-- ✅ キャンペーンセクション -->
+  <section class="campaign" style="background: linear-gradient(135deg, #fff176, #ffb74d); padding: 20px 12px;">
+    <div style="background: #fff; padding: 20px 16px; max-width: 680px; margin: 0 auto; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+      <h2 style="font-size: 1.3em; margin-bottom: 12px;">今だけ限定！英会話キャンペーン実施中</h2>
+      <div style="display: inline-block; background: #fff8e1; padding: 10px 18px; border-radius: 30px; border: 1px solid #e0a800; color: #b35400; margin: 12px 0; font-size: 1em;">
+        <span style="text-decoration: line-through; color: #999; margin-right: 8px;">通常価格 69,800円</span>
+        → 今だけ <strong style="font-size: 1.6em; font-weight: 700; color: #b35400;">40,000円（税込）</strong>
+      </div>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">マンツーマンレッスン</div>
+        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">コーチング付き</div>
+        <div style="background: #fffdf0; padding: 6px 12px; border-radius: 6px; font-size: 0.9em;">教材費無料</div>
+      </div>
+      <div style="margin-top: 14px; font-weight: bold; color: #c62828; font-size: 0.9em;">
+        📅 5月31日までの期間限定！
+      </div>
     </div>
-    <div class="features">
-      <div class="feature">👥 マンツーマンレッスン</div>
-      <div class="feature">💬 コーチング付き</div>
-      <div class="feature">🎁 教材費無料</div>
-    </div>
-    <div class="deadline">📅 5月31日までの期間限定！</div>
-  </div>
-</section>
-  
-  <!--こんなひとにおすすめ-->
-<section class="real-voices">
-  <h2 class="animate-underline">Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
-  <div class="real-voice-grid fixed-layout">
-    
-    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');">
-      <div class="real-voice-text">中学英語もあやふやで、自信がありません。</div>
-    </div>
+  </section>
 
-    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=800&q=80');">
-      <div class="real-voice-text">文法はわかるのに、話すとなると口が止まる…</div>
+  <!-- ✅ こんな方におすすめセクション -->
+  <section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
+    <h2 class="animate-underline">Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
+
+    <div class="real-voice-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
+      <div class="real-voice-card" style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          中学英語もあやふやで、自信がありません。
+        </div>
+      </div>
+
+      <div class="real-voice-card" style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          文法はわかるのに、話すとなると口が止まる…
+        </div>
+      </div>
+
+      <div class="real-voice-card" style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          発音がカタカナになってしまって通じない…
+        </div>
+      </div>
+
+      <div class="real-voice-card" style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
+          英検や試験のために、総合力を伸ばしたい！
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=800&q=80');">
-      <div class="real-voice-text">発音がカタカナになってしまって通じない…</div>
-    </div>
-
-    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80');">
-      <div class="real-voice-text">英検や試験のために、総合力を伸ばしたい！</div>
-    </div>
-
-  </div>
-</section>
-
-  <!-- 📱 教材紹介 -->
+  <!-- ✅ 教材紹介 -->
   <section>
     <h2 style="text-align:center;">教材紹介</h2>
     <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
-    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
+    <img src="app.png" alt="アプリ画像" style="max-width: 500px; margin: 0 auto;">
   </section>
 
-  <!-- 📊 コース比較表 -->
+  <!-- ✅ コース比較表 -->
   <section>
     <h2 style="text-align:center;">コース比較表</h2>
-    <table>
-      <tr>
-        <th>コース名</th>
-        <th>対象レベル</th>
-        <th>特徴</th>
-        <th>1回の時間</th>
-        <th>オンライン</th>
+    <table style="margin: 0 auto; border-collapse: collapse; width: 90%; max-width: 800px;">
+      <tr style="background: #fff8e1;">
+        <th style="padding: 10px; border: 1px solid #ccc;">コース名</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">対象レベル</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">特徴</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">1回の時間</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">オンライン</th>
       </tr>
       <tr>
-        <td>やさしい英語入門</td>
-        <td>完全初心者</td>
-        <td>基礎フレーズ・発音</td>
-        <td>30分</td>
-        <td>〇</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">やさしい英語入門</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">完全初心者</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">基礎フレーズ・発音</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">30分</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">〇</td>
       </tr>
       <tr>
-        <td>リスニング＆スピーキング</td>
-        <td>中級</td>
-        <td>会話特訓</td>
-        <td>30分</td>
-        <td>〇</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">リスニング＆スピーキング</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">中級</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">会話特訓</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">30分</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">〇</td>
       </tr>
       <tr>
-        <td>発音トレーニング</td>
-        <td>初中級</td>
-        <td>発音矯正</td>
-        <td>30分</td>
-        <td>〇</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">発音トレーニング</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">初中級</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">発音矯正</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">30分</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">〇</td>
       </tr>
       <tr>
-        <td>スキル総合アップ</td>
-        <td>中〜上級</td>
-        <td>全スキル対応</td>
-        <td>60分</td>
-        <td>〇</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">スキル総合アップ</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">中〜上級</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">全スキル対応</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">60分</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">〇</td>
       </tr>
     </table>
   </section>
 
-  <!-- 🗣 受講者の声 -->
+  <!-- ✅ 受講者の声 -->
   <section id="about">
     <h2 style="text-align:center;">受講者の声</h2>
-    <div class="testimonial">
-      <strong>まゆこ さん（30代 / OL）</strong>
-      英語は苦手意識がありましたが、Maddie先生のレッスンはとても楽しくて、続けられました！
-    </div>
-    <div class="testimonial">
-      <strong>たかし さん（40代 / 会社員）</strong>
-      発音トレーニングを受けて、自信を持って話せるようになりました！
-    </div>
-    <div class="testimonial">
-      <strong>ゆか さん（高校生）</strong>
-      テスト対策もしてもらえて、学校の成績も上がりました！
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div style="margin-bottom: 20px;">
+        <strong>まゆこ さん（30代 / OL）</strong><br>
+        英語は苦手意識がありましたが、Maddie先生のレッスンはとても楽しくて、続けられました！
+      </div>
+      <div style="margin-bottom: 20px;">
+        <strong>たかし さん（40代 / 会社員）</strong><br>
+        発音トレーニングを受けて、自信を持って話せるようになりました！
+      </div>
+      <div>
+        <strong>ゆか さん（高校生）</strong><br>
+        テスト対策もしてもらえて、学校の成績も上がりました！
+      </div>
     </div>
   </section>
 
-  <!-- 📩 フッター -->
-  <footer id="contact">
+  <!-- ✅ フッター -->
+  <footer id="contact" style="padding: 40px 20px; text-align: center; background: #fff8e1; margin-top: 40px;">
     &copy; 2025 Maddie English | All rights reserved
   </footer>
-<script>
-  const navbar = document.querySelector('.navbar');
-  const topBar = document.querySelector('.top-bar');
-  const topBarHeight = topBar ? topBar.offsetHeight : 0;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      navbar.style.top = '0'; // スクロール時にぴったり上へ
-    } else {
-      navbar.style.top = topBarHeight + 'px'; // 最初はキャンペーンバーの下に
-    }
-  });
-</script>
+  <!-- ✅ アンダーラインアニメーション -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.querySelector(".animate-underline");
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const target = document.querySelector(".animate-underline");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target); // 一度だけ発火
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+      if (target) {
+        observer.observe(target);
+      }
+    });
+  </script>
 
-    if (target) {
-      observer.observe(target);
-    }
-  });
-</script>
-  
+  <!-- ✅ スクロール時ナビ位置調整 -->
+  <script>
+    const navbar = document.querySelector('.navbar');
+    const topBar = document.querySelector('.top-bar');
+    const topBarHeight = topBar ? topBar.offsetHeight : 0;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.style.top = '0';
+      } else {
+        navbar.style.top = topBarHeight + 'px';
+      }
+    });
+  </script>
+
 </body>
 </html>
