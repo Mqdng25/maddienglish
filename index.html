@@ -39,6 +39,13 @@
       text-align: center;
     }
 
+@media (max-width: 768px) {
+  .real-voice-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
   </style>
 </head>
 
@@ -97,7 +104,13 @@
   <section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
     <h2 class="animate-underline">Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
 
-    <div class="real-voice-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
+    <div class="real-voice-grid" style="
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+">
       <div class="real-voice-card" style="position: relative; height: 280px; background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 rgba(255, 204, 0, 1); display: flex; align-items: center; justify-content: center;">
         <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
         <div style="position: relative; color: #fff; font-size: 1.1em; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; font-style: italic; z-index: 2; max-width: 90%; backdrop-filter: blur(3px);">
