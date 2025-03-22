@@ -3,81 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>かわいい英語コース</title>
+  <title>Maddie English</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fdf5f5;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #fff8e1;
       color: #333;
     }
 
     header {
-      background-color: #ffccdc;
-      padding: 20px;
+      background-color: #ffcd1f;
       text-align: center;
-      border-radius: 0 0 20px 20px;
+      padding: 60px 20px 40px;
     }
 
-    nav {
-      background-color: #ffe5ec;
+    header img {
+      max-width: 150px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .courses {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
-      padding: 10px 0;
-      font-weight: bold;
+      justify-content: center;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #ff6b81;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #e63946;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
+    .course-card {
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
       text-align: center;
+    }
+
+    .course-card h3 {
+      margin-top: 0;
+      color: #e65100;
+    }
+
+    .hero {
+      background-color: #fff3c1;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    .image-banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 30px 0;
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #ffccdc;
+      background-color: #ffe082;
       text-align: center;
-      border-radius: 20px 20px 0 0;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>かわいい英語コース</h1>
+    <img src="logo.png" alt="Maddie English ロゴ" />
+    <h1>Maddie English</h1>
+    <p>楽しく、まっすぐ、伝わる英語<br>話せるようになるって、嬉しい！</p>
   </header>
 
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="courses.html">コース紹介</a>
-    <a href="about.html">先生について</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
+  <section class="hero">
+    <h2>英語、今からでも遅くない。</h2>
+    <p>「読む・聞く・話す・書く」全スキルを、あなたのペースで楽しく習得しましょう。</p>
+    <img class="image-banner" src="https://images.unsplash.com/photo-1580894908360-f0b38bd8aa4d?auto=format&fit=crop&w=1200&q=80" alt="英語学習イメージ">
+  </section>
 
-  <div class="container">
-    <h2>ようこそ！</h2>
-    <p>ここはあなたの英語学習を楽しくするための場所です🌸</p>
-  </div>
+  <section>
+    <h2 style="text-align:center;">Maddie English のコース一覧</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>やさしい英語入門</h3>
+        <p>ゼロからでも安心。アルファベット・基本フレーズから始める超入門コース。</p>
+      </div>
+      <div class="course-card">
+        <h3>リスニング & スピーキング特訓</h3>
+        <p>「知ってるのに話せない」人へ。発音＆会話トレーニングで自信アップ。</p>
+      </div>
+      <div class="course-card">
+        <h3>発音トレーニング</h3>
+        <p>カタカナ英語から卒業！通じる発音とリズムを身につける集中コース。</p>
+      </div>
+      <div class="course-card">
+        <h3>総合スキルアップ</h3>
+        <p>読む・書く・話す・聞くをバランスよく伸ばしたい人へ。全方位対応型。</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 かわいい英語コース
+    &copy; 2025 Maddie English | All rights reserved
   </footer>
 
 </body>
 </html>
+
