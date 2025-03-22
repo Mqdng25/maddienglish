@@ -57,6 +57,7 @@
       z-index: 1000;
       flex-wrap: wrap;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: top 0.3s ease;
     }
 
     .navbar img {
@@ -326,6 +327,19 @@
   <footer id="contact">
     &copy; 2025 Maddie English | All rights reserved
   </footer>
+<script>
+  const navbar = document.querySelector('.navbar');
+  const topBar = document.querySelector('.top-bar');
+  const topBarHeight = topBar ? topBar.offsetHeight : 0;
 
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.style.top = '0'; // スクロール時にぴったり上へ
+    } else {
+      navbar.style.top = topBarHeight + 'px'; // 最初はキャンペーンバーの下に
+    }
+  });
+</script>
+  
 </body>
 </html>
