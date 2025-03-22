@@ -8,6 +8,17 @@
   * {
     box-sizing: border-box;
   }
+  
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .campaign-section {
+      /* 既存のスタイル */
+    }
+
   .navbar {
   display: flex;
   justify-content: space-between;
@@ -166,7 +177,7 @@
 .campaign-box {
   background-color: #ffffff;
   border-radius: 16px;
-  padding: 32px 24px 24px; /* ← 上部少し余裕持たせます */
+  padding: 24px 16px;
   max-width: 500px;
   width: 100%;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -175,11 +186,17 @@
   line-height: 1.5;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
+    
 .campaign-container {
   position: relative;
   max-width: 500px;
   width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .campaign-heading {
@@ -196,6 +213,9 @@
   white-space: nowrap;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 2;
+  max-width: 90vw;      /* ← 親の90%までに制限 */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
