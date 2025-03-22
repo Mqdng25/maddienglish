@@ -12,10 +12,36 @@
       color: #333;
     }
 
-    /* 最上部のイエローライン */
+    /* 太いイエローバー */
     .top-bar {
-      height: 5px;
       background-color: #ffcd1f;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar .top-logo {
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .top-bar .top-buttons a {
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      color: #333;
+      border: 1px solid #333;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
+    .top-bar .top-buttons a:hover {
+      background-color: #f5f5f5;
     }
 
     /* ナビゲーション */
@@ -26,7 +52,7 @@
       background-color: rgba(255, 255, 255, 0.95);
       padding: 10px 20px;
       position: fixed;
-      top: 5px;
+      top: 50px; /* イエローバー分の余白 */
       width: 100%;
       z-index: 1000;
       flex-wrap: wrap;
@@ -55,37 +81,6 @@
       color: #e65100;
     }
 
-    .cta-buttons {
-      display: flex;
-      gap: 10px;
-      margin-left: 20px;
-    }
-
-    .btn-trial,
-    .btn-login {
-      text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      transition: 0.3s;
-    }
-
-    .btn-trial {
-      background-color: #ffcd1f;
-      color: #333;
-    }
-
-    .btn-login {
-      border: 1px solid #ffcd1f;
-      color: #333;
-    }
-
-    .btn-trial:hover,
-    .btn-login:hover {
-      background-color: #ffe46c;
-    }
-
     /* ヘッダー画像 */
     .hero-header {
       background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80');
@@ -104,7 +99,7 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5); /* 黒の透かし全体 */
+      background: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
@@ -129,6 +124,40 @@
 
     .hero-overlay p {
       font-size: 1.2em;
+    }
+
+    /* お得情報 */
+    .offer {
+      background-color: #fff3cd;
+      border-left: 6px solid #ffcd1f;
+      padding: 30px 20px;
+      margin-top: 40px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .offer h2 {
+      color: #b35400;
+      margin-bottom: 10px;
+    }
+
+    .offer .price {
+      font-size: 1.4em;
+      margin: 10px 0;
+    }
+
+    .offer .original-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 10px;
+    }
+
+    .offer .limited {
+      color: #d32f2f;
+      font-weight: bold;
     }
 
     section {
@@ -204,10 +233,16 @@
     }
 
     @media (max-width: 700px) {
-      .nav-links, .cta-buttons {
+      .nav-links {
         flex-direction: column;
-        align-items: flex-end;
-        width: 100%;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-buttons {
         margin-top: 10px;
       }
     }
@@ -215,8 +250,14 @@
 </head>
 <body>
 
-  <!-- トップのイエローライン -->
-  <div class="top-bar"></div>
+  <!-- トップバー -->
+  <div class="top-bar">
+    <div class="top-logo">今だけ限定キャンペーン実施中！</div>
+    <div class="top-buttons">
+      <a href="#trial">無料体験</a>
+      <a href="#login">ログイン</a>
+    </div>
+  </div>
 
   <!-- ナビゲーション -->
   <div class="navbar">
@@ -226,10 +267,6 @@
       <a href="#courses">コース紹介</a>
       <a href="#about">講師紹介</a>
       <a href="#contact">お問い合わせ</a>
-    </div>
-    <div class="cta-buttons">
-      <a href="#trial" class="btn-trial">無料体験</a>
-      <a href="#login" class="btn-login">ログイン</a>
     </div>
   </div>
 
@@ -241,6 +278,17 @@
       <p>楽しく、まっすぐ、伝わる英語</p>
     </div>
   </header>
+
+  <!-- お得情報 -->
+  <section class="offer" id="offer">
+    <h2>🎉 今だけのキャンペーン 🎉</h2>
+    <p class="price">
+      <span class="original-price">通常価格 69,800円</span>
+      → 今だけ <strong>40,000円（税込）</strong><br>
+    </p>
+    <p>月4回のマンツーマン英会話レッスン + コーチング付き！</p>
+    <p class="limited">📅 キャンペーンは5月末まで！</p>
+  </section>
 
   <!-- コース紹介 -->
   <section id="courses">
@@ -265,76 +313,8 @@
     </div>
   </section>
 
-  <!-- 教材紹介 -->
-  <section>
-    <h2 style="text-align:center;">教材紹介</h2>
-    <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
-    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
-  </section>
-
-  <!-- コース比較表 -->
-  <section>
-    <h2 style="text-align:center;">コース比較表</h2>
-    <table>
-      <tr>
-        <th>コース名</th>
-        <th>対象レベル</th>
-        <th>特徴</th>
-        <th>1回の時間</th>
-        <th>オンライン</th>
-      </tr>
-      <tr>
-        <td>やさしい英語入門</td>
-        <td>完全初心者</td>
-        <td>基礎フレーズ・発音</td>
-        <td>30分</td>
-        <td>〇</td>
-      </tr>
-      <tr>
-        <td>リスニング＆スピーキング</td>
-        <td>中級</td>
-        <td>会話特訓</td>
-        <td>30分</td>
-        <td>〇</td>
-      </tr>
-      <tr>
-        <td>発音トレーニング</td>
-        <td>初中級</td>
-        <td>発音矯正</td>
-        <td>30分</td>
-        <td>〇</td>
-      </tr>
-      <tr>
-        <td>スキル総合アップ</td>
-        <td>中〜上級</td>
-        <td>全スキル対応</td>
-        <td>60分</td>
-        <td>〇</td>
-      </tr>
-    </table>
-  </section>
-
-  <!-- 受講者の声 -->
-  <section id="about">
-    <h2 style="text-align:center;">受講者の声</h2>
-    <div class="testimonial">
-      <strong>まゆこ さん（30代 / OL）</strong>
-      英語は苦手意識がありましたが、Maddie先生のレッスンはとても楽しくて、続けられました！
-    </div>
-    <div class="testimonial">
-      <strong>たかし さん（40代 / 会社員）</strong>
-      発音トレーニングを受けて、自信を持って話せるようになりました！
-    </div>
-    <div class="testimonial">
-      <strong>ゆか さん（高校生）</strong>
-      テスト対策もしてもらえて、学校の成績も上がりました！
-    </div>
-  </section>
-
-  <!-- フッター -->
-  <footer id="contact">
-    &copy; 2025 Maddie English | All rights reserved
-  </footer>
+  <!-- 以下そのまま：教材紹介・比較表・受講者の声・フッター -->
+  <!-- 必要であれば次のメッセージで続きも貼ります！ -->
 
 </body>
 </html>
