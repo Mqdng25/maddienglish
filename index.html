@@ -224,22 +224,36 @@
   font-size: 1.5em;
   margin-bottom: 40px;
   color: #222;
-  position: relative; /* ← これが重要！ */
+  position: relative;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+  overflow: hidden; /* ← 追加：アニメーションに必要 */
 }
 
-/* スタイリッシュなアンダーライン */
+/* アンダーライン */
 .real-voices h2::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 80px;
-  height: 3px;
-  background-color: #ffd54f; /* 明るいパステルイエロー */
-  transform: translateX(-50%);
+  width: 160px; /* ← 長くしました！ */
+  height: 4px;
+  background-color: #ffd54f;
+  transform: translateX(-50%) scaleX(0); /* ← 初期状態：横幅ゼロ */
+  transform-origin: center;
   border-radius: 2px;
+  animation: underlineExpand 1s ease-out forwards;
+  animation-delay: 0.3s; /* 少し遅れて出てくる */
+}
+
+/* アニメーション定義 */
+@keyframes underlineExpand {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
 }
 
 .real-voice-grid.fixed-layout {
