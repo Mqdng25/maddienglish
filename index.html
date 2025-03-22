@@ -252,23 +252,24 @@
   margin-bottom: 40px;
   color: #222;
   position: relative;
-  display: block; /* ← inline-block を block に変更 */
+  display: block;
   text-align: center;
-  padding-bottom: 16px;
+  padding-bottom: 20px; /* 余白も調整 */
 }
 
 .animate-underline::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -8px; /* 🔻 ← ラインを少し下に下げる */
   left: 50%;
-  width: 60%; /* ← 横幅をpxではなく % で指定！ */
+  width: 60%;
   height: 4px;
   background-color: #ffd54f;
   transform: translateX(-50%) scaleX(0);
   transform-origin: center;
   border-radius: 2px;
   transition: transform 0.6s ease-out;
+  transition-delay: 1s; /* 🕒 ← 出現を遅らせる */
 }
 
 .animate-underline.active::after {
