@@ -86,6 +86,29 @@
       to { opacity: 1; transform: translateY(0); }
     }
   }
+
+  /* ✅ トップバー（キャンペーン告知）のスマホ対応 */
+.top-bar {
+  background-color: #ffcd1f;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* ✅ 上下の間隔を確保！ */
+  }
+
+  .top-bar a {
+    margin-left: 0 !important;
+    margin-top: 6px;
+  }
+}
 </style>
 
   <style>
@@ -324,19 +347,26 @@
   </script>
 
   <!-- ✅ ナビゲーション位置制御 -->
-  <script>
-    const navbar = document.querySelector('.navbar');
-    const topBar = document.querySelector('.top-bar');
-    const topBarHeight = topBar ? topBar.offsetHeight : 0;
+<script>
+  const navbar = document.querySelector('.navbar');
+  const topBar = document.querySelector('.top-bar');
+  const topBarHeight = topBar ? topBar.offsetHeight : 0;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        navbar.style.top = '0';
-      } else {
-        navbar.style.top = topBarHeight + 'px';
-      }
-    });
-  </script>
+  // ページ読み込み時にも正しい位置に
+  document.addEventListener('DOMContentLoaded', () => {
+    navbar.style.top = topBarHeight + 'px';
+  });
+
+  // スクロール時に動かす
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.style.top = '0';
+    } else {
+      navbar.style.top = topBarHeight + 'px';
+    }
+  });
+</script>
+
 <script>
   function toggleMenu() {
     const menu = document.getElementById('navMenu');
