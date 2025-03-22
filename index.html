@@ -63,7 +63,7 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, #fff9c4, #fff);
-  padding: 14px 28px;
+  padding: 14px max(4vw, 20px);
   position: fixed;
   top: 50px;
   width: 100%;
@@ -72,20 +72,15 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   font-weight: 600;
   font-size: 1em;
+  box-sizing: border-box;
 ">
 
   <img src="logo.png" alt="Maddie English ロゴ" style="height: 44px;">
 
-  <div style="display: flex; gap: 28px; align-items: center;">
-    <a href="#home" style="color: #444; text-decoration: none; position: relative;">
-      ホーム
-    </a>
-    <a href="#courses" style="color: #444; text-decoration: none; position: relative;">
-      コース紹介
-    </a>
-    <a href="#about" style="color: #444; text-decoration: none; position: relative;">
-      講師紹介
-    </a>
+  <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+    <a href="#home" style="color: #444; text-decoration: none;">ホーム</a>
+    <a href="#courses" style="color: #444; text-decoration: none;">コース紹介</a>
+    <a href="#about" style="color: #444; text-decoration: none;">講師紹介</a>
     <a href="#contact" style="
       color: #fff;
       background-color: #f9a825;
@@ -93,6 +88,7 @@
       border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
+      white-space: nowrap;
       transition: background-color 0.3s ease;
     " onmouseover="this.style.backgroundColor='#f57f17'" onmouseout="this.style.backgroundColor='#f9a825'">
       お問い合わせ
