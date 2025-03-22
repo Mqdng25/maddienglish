@@ -180,16 +180,16 @@
 
 .campaign-heading {
   position: absolute;
-  top: -24px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f78c6b;
+  background-color: #a5d6a7;
   color: #fff;
   padding: 10px 28px;
   border-radius: 999px;
   font-size: 1.05rem;
   font-weight: bold;
-  white-space: nowrap; /* ← 改行させない！ */
+  white-space: nowrap;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
@@ -297,22 +297,29 @@
     </div>
   </header>
   <!-- ✅ キャンペーンセクション -->
-  <section class="campaign-section">
+ <section class="campaign-section">
   <div class="campaign-container">
-  <div class="campaign-heading">今だけ！英会話キャンペーン実施中</div>
-  <div class="campaign-box">
-    <p class="price">
-      通常価格 <span class="old-price">69,800円</span> → <span class="new-price">今だけ 40,000円（税込）</span>
-    </p>
-    <ul class="features">
-      <li>マンツーマンレッスン</li>
-      <li>コーチング付き</li>
-      <li>教材費無料</li>
-    </ul>
-    <p class="deadline">📅 5月31日までの期間限定！</p>
-    <a href="#contact" class="cta-button">今すぐ申し込む</a>
+
+    <div class="campaign-box">
+
+      <!-- 🔽 ボックスの中にラベルを移動！ -->
+      <div class="campaign-heading">🌼 今だけ！英会話キャンペーン実施中</div>
+
+      <p class="price">
+        <span class="old-price">69,800円</span> → <span class="new-price">今だけ 40,000円（税込）</span>
+      </p>
+      <ul class="features">
+        <li>マンツーマンレッスン</li>
+        <li>コーチング付き</li>
+        <li>教材費無料</li>
+      </ul>
+      <p class="deadline">📅 5月31日までの期間限定！</p>
+      <a href="#contact" class="cta-button">今すぐ申し込む</a>
+    </div>
+
   </div>
 </section>
+
 
   <!-- ✅ こんな方におすすめ（Real Voice 上2・下2） -->
   <section class="real-voices" style="background: #fffef8; padding: 60px 20px;">
