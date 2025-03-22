@@ -12,6 +12,12 @@
       color: #333;
     }
 
+    /* 最上部のイエローライン */
+    .top-bar {
+      height: 5px;
+      background-color: #ffcd1f;
+    }
+
     /* ナビゲーション */
     .navbar {
       display: flex;
@@ -20,9 +26,10 @@
       background-color: rgba(255, 255, 255, 0.95);
       padding: 10px 20px;
       position: fixed;
-      top: 0;
+      top: 5px;
       width: 100%;
       z-index: 1000;
+      flex-wrap: wrap;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
@@ -32,7 +39,9 @@
 
     .nav-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -46,23 +55,64 @@
       color: #e65100;
     }
 
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+    }
+
+    .btn-trial,
+    .btn-login {
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      transition: 0.3s;
+    }
+
+    .btn-trial {
+      background-color: #ffcd1f;
+      color: #333;
+    }
+
+    .btn-login {
+      border: 1px solid #ffcd1f;
+      color: #333;
+    }
+
+    .btn-trial:hover,
+    .btn-login:hover {
+      background-color: #ffe46c;
+    }
+
     /* ヘッダー画像 */
     .hero-header {
       background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80');
       background-size: cover;
       background-position: center;
       height: 80vh;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       padding-top: 60px;
-      position: relative;
+    }
+
+    .hero-header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* 黒の透かし全体 */
+      z-index: 0;
     }
 
     .hero-overlay {
-      text-align: center;
+      position: relative;
+      z-index: 1;
       color: white;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       padding: 30px;
       border-radius: 12px;
     }
@@ -153,25 +203,20 @@
       color: #555;
     }
 
-    @media (max-width: 600px) {
-      .courses {
+    @media (max-width: 700px) {
+      .nav-links, .cta-buttons {
         flex-direction: column;
-        align-items: center;
-      }
-
-      table {
-        font-size: 0.9em;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        text-align: right;
+        align-items: flex-end;
+        width: 100%;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- トップのイエローライン -->
+  <div class="top-bar"></div>
 
   <!-- ナビゲーション -->
   <div class="navbar">
@@ -181,6 +226,10 @@
       <a href="#courses">コース紹介</a>
       <a href="#about">講師紹介</a>
       <a href="#contact">お問い合わせ</a>
+    </div>
+    <div class="cta-buttons">
+      <a href="#trial" class="btn-trial">無料体験</a>
+      <a href="#login" class="btn-login">ログイン</a>
     </div>
   </div>
 
@@ -193,7 +242,7 @@
     </div>
   </header>
 
-  <!-- コース一覧 -->
+  <!-- コース紹介 -->
   <section id="courses">
     <h2 style="text-align:center;">Maddie English のコース一覧</h2>
     <div class="courses">
@@ -223,7 +272,7 @@
     <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
   </section>
 
-  <!-- コース比較 -->
+  <!-- コース比較表 -->
   <section>
     <h2 style="text-align:center;">コース比較表</h2>
     <table>
