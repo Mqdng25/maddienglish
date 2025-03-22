@@ -217,83 +217,62 @@
 }
     
         /* こんな方におすすめ */
-.recommendation-with-image {
+.recommendation-v2 {
   background: #fffef8;
   padding: 60px 20px;
+  text-align: center;
 }
 
-.recommend-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.recommend-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.recommend-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.recommend-content h2 {
+.recommendation-v2 h2 {
   font-size: 1.6em;
+  margin-bottom: 40px;
   color: #b35400;
-  margin-bottom: 30px;
 }
 
-.recommend-item {
-  background-color: #fff;
-  border-left: 5px solid #ffcd1f;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+.recommend-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.user-voice {
+.recommend-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-5px);
+}
+
+.recommend-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card-text .voice {
   font-style: italic;
+  margin-bottom: 10px;
   color: #555;
-  margin-bottom: 8px;
-  padding-left: 20px;
-  position: relative;
 }
 
-.user-voice::before {
-  content: "💬";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.recommend-text {
-  margin: 0;
+.card-text .course {
   font-weight: bold;
   color: #333;
 }
 
-@media (max-width: 768px) {
-  .recommend-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .recommend-image img {
-    max-width: 100%;
-  }
-
-  .recommend-content h2 {
-    font-size: 1.3em;
-    text-align: center;
-  }
-}
 
   </style>
 </head>
@@ -345,36 +324,48 @@
 </section>
   
   <!--こんなひとにおすすめ-->
-<section class="recommendation-with-image">
-  <div class="recommend-wrapper">
-    <div class="recommend-image">
-      <img src="https://images.unsplash.com/photo-1590080876400-df89f6aaec95?auto=format&fit=crop&w=600&q=80" alt="悩んでいる学習者のイメージ">
+<section class="recommendation-v2">
+  <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
+
+  <div class="recommend-cards">
+    <!-- 1人目 -->
+    <div class="recommend-card">
+      <img src="https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=600&q=80" alt="初心者女性" />
+      <div class="card-text">
+        <p class="voice">「中学英語もあやふやで、自信がありません。」</p>
+        <p class="course">🧡 <strong>やさしい英語入門コース</strong> で、日本語も交えながら丁寧にスタートできます。</p>
+      </div>
     </div>
-    <div class="recommend-content">
-      <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
 
-      <div class="recommend-item">
-        <div class="user-voice">「中学英語もあやふやで、自信がありません。会話となると頭が真っ白になります。」</div>
-        <p class="recommend-text">🧡 <strong>やさしい英語入門コース</strong> で、日本語も交えながらゆっくり丁寧にスタートできます。</p>
+    <!-- 2人目 -->
+    <div class="recommend-card">
+      <img src="https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=600&q=80" alt="悩む男性" />
+      <div class="card-text">
+        <p class="voice">「文法はわかるのに、話すとなると口が止まる…」</p>
+        <p class="course">💬 <strong>在宅留学スピーキングコース</strong> で、自宅で英語漬けの会話練習！</p>
       </div>
+    </div>
 
-      <div class="recommend-item">
-        <div class="user-voice">「文法はある程度わかるのに、実際に話すとなると頭が回らなくなってしまいます。」</div>
-        <p class="recommend-text">💬 <strong>在宅留学スピーキングコース</strong> で、実践的な会話トレーニングを。自宅で英語漬け体験！</p>
+    <!-- 3人目 -->
+    <div class="recommend-card">
+      <img src="https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=600&q=80" alt="発音に悩む人" />
+      <div class="card-text">
+        <p class="voice">「発音がカタカナになってしまって通じない…」</p>
+        <p class="course">🔊 <strong>発音特化コース</strong> で録音添削＋個別フィードバック！</p>
       </div>
+    </div>
 
-      <div class="recommend-item">
-        <div class="user-voice">「カタカナ英語になってしまい、通じないのが怖くて話せません。」</div>
-        <p class="recommend-text">🔊 <strong>発音特化コース</strong> なら、毎週の発音トレーニング＆個別フィードバックで着実にレベルアップ。</p>
-      </div>
-
-      <div class="recommend-item">
-        <div class="user-voice">「英検や試験対策がしたい！将来のために英語力全体を高めたいです。」</div>
-        <p class="recommend-text">📚 <strong>総合スキルアップコース</strong> なら、4技能をバランスよく伸ばして、テスト対策もバッチリ。</p>
+    <!-- 4人目 -->
+    <div class="recommend-card">
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=600&q=80" alt="試験対策中の学生" />
+      <div class="card-text">
+        <p class="voice">「英検や試験のために、総合力を伸ばしたい！」</p>
+        <p class="course">📚 <strong>総合スキルアップコース</strong> なら4技能をしっかり対策可能！</p>
       </div>
     </div>
   </div>
 </section>
+
 
 
   <!-- 🧾 コース紹介 -->
