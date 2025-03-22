@@ -292,32 +292,30 @@
   }
 }
     
- /* スマホ〜共通スタイル */
-.real-voice .voice-box {
+/* 共通スタイル */
+.real-voices .voice-box {
   padding: 16px 20px;
 }
 
-.real-voice .voice-text {
+.real-voices .voice-text {
   font-size: 0.95rem;
   word-break: keep-all;
   line-height: 1.4;
 }
 
-/* PCだけ1行表示にして改行防止（強制せず、自然に） */
+/* PCで1行に収める調整 */
 @media (min-width: 768px) {
-  .real-voice .voice-text {
-    white-space: nowrap;     /* ← 改行を防ぐ */
-    overflow: hidden;        /* ← 端がはみ出さないように */
-    text-overflow: ellipsis; /* ← はみ出す場合は「…」に */
+  .real-voices .voice-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .real-voice .voice-box {
+  .real-voices .voice-box {
     max-width: 100%;
     width: 100%;
   }
 }
-
-
     
   </style>
 </head>
