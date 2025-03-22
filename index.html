@@ -152,8 +152,8 @@
 
     /* 背景となる黄色いバー */
 .campaign-section {
-  background-color: #fff4c2; /* やわらかい黄色 */
-  padding: 40px 20px;
+  background-color: #fff4c2;
+  padding: 40px 20px; /* ← 80pxから40pxに */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,69 +163,44 @@
 .campaign-box {
   background-color: #ffffff;
   border-radius: 16px;
-  padding: 32px 24px; /* ← 内側の余白を小さく */
-  max-width: 500px;   /* ← 横幅を狭く */
+  padding: 20px 20px; /* ← かなりコンパクトに */
+  max-width: 500px;
   width: 100%;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.95rem; /* ← 全体の文字を少し小さく */
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* テキストや価格など */
 .campaign-box h2 {
-  font-size: 1.8rem;
-  color: #444;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
 .price {
-  font-size: 1.2rem;
-  margin-bottom: 16px;
-}
-
-.old-price {
-  text-decoration: line-through;
-  color: #888;
-  margin-right: 8px;
-}
-
-.new-price {
-  color: #e67e22;
-  font-weight: bold;
-}
-
-.features {
-  list-style: none;
-  padding-left: 0;
-  margin: 20px 0;
   font-size: 1rem;
-  color: #555;
-}
-
-.features li {
   margin-bottom: 8px;
 }
 
+.features {
+  font-size: 0.9rem;
+  margin: 12px 0;
+}
+
+.features li {
+  margin-bottom: 4px;
+}
+
 .deadline {
-  font-weight: bold;
-  color: #c0392b;
-  margin-bottom: 24px;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
 }
 
 .cta-button {
-  background-color: #f4c430;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e2b200;
+  padding: 10px 20px;
+  font-size: 0.95rem;
 }
     
   </style>
