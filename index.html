@@ -13,6 +13,94 @@
       color: #333;
     }
 
+<style>
+/* ナビバーのスタイル */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #fff9c4, #fff);
+  padding: 14px max(4vw, 20px);
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  z-index: 1000;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-weight: 600;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  height: 44px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #444;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-links a.cta {
+  background-color: #f9a825;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a.cta:hover {
+  background-color: #f57f17;
+}
+
+/* ハンバーガーアイコン */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* スマホ表示（768px以下）で切り替え */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff8dc;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    gap: 16px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+</style>
+
+
     /* アンダーライン */
     .animate-underline {
       position: relative;
@@ -292,6 +380,12 @@
       }
     });
   </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
