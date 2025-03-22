@@ -224,16 +224,16 @@
 }
 
 .real-voices h2 {
-  font-size: 1.6em;
-  color: #b35400;
+  font-size: 1.5em;
   margin-bottom: 40px;
+  color: #222; /* ← 黒に近い落ち着いた色 */
 }
 
-.real-voice-grid {
+.real-voice-grid.fixed-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -254,7 +254,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* 黒フィルターで文字を読みやすく */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .real-voice-text {
@@ -271,9 +271,9 @@
   backdrop-filter: blur(3px);
 }
 
-@media (max-width: 600px) {
-  .real-voices h2 {
-    font-size: 1.3em;
+@media (max-width: 768px) {
+  .real-voice-grid.fixed-layout {
+    grid-template-columns: 1fr;
   }
 
   .real-voice-card {
@@ -337,8 +337,8 @@
   
   <!--こんなひとにおすすめ-->
 <section class="real-voices">
-  <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
-  <div class="real-voice-grid">
+  <h2>Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
+  <div class="real-voice-grid fixed-layout">
     
     <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');">
       <div class="real-voice-text">中学英語もあやふやで、自信がありません。</div>
