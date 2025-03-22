@@ -12,30 +12,77 @@
       color: #333;
     }
 
-    header {
-      background-color: #ffffff;
+    /* ナビゲーション */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .navbar img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e65100;
+    }
+
+    /* ヘッダー画像 */
+    .hero-header {
+      background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 60px;
+      position: relative;
+    }
+
+    .hero-overlay {
       text-align: center;
-      padding: 40px 20px 30px;
-      border-bottom: 3px solid #ffcd1f;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 12px;
     }
 
-    header img {
-      max-width: 120px;
-      border-radius: 20px;
+    .hero-overlay img {
+      width: 100px;
+      margin-bottom: 20px;
     }
 
-    header h1 {
-      font-size: 2.2em;
-      margin: 15px 0 5px;
+    .hero-overlay h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
     }
 
-    header p {
-      font-size: 1.1em;
-      color: #555;
+    .hero-overlay p {
+      font-size: 1.2em;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 60px 20px 40px;
       max-width: 1000px;
       margin: auto;
     }
@@ -59,22 +106,6 @@
     .course-card h3 {
       margin-top: 0;
       color: #e65100;
-    }
-
-    .hero {
-      background-color: #fff3c1;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1em;
-      color: #444;
     }
 
     .image-banner {
@@ -131,45 +162,68 @@
       table {
         font-size: 0.9em;
       }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: right;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.png" alt="Maddie English ロゴ" />
-    <h1>Maddie English</h1>
-    <p>楽しく、まっすぐ、伝わる英語<br>話せるようになるって、嬉しい！</p>
+  <!-- ナビゲーション -->
+  <div class="navbar">
+    <img src="logo.png" alt="Maddie English ロゴ">
+    <div class="nav-links">
+      <a href="#home">ホーム</a>
+      <a href="#courses">コース紹介</a>
+      <a href="#about">講師紹介</a>
+      <a href="#contact">お問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- ヘッダー -->
+  <header class="hero-header" id="home">
+    <div class="hero-overlay">
+      <img src="logo.png" alt="ロゴ">
+      <h1>Maddie English</h1>
+      <p>楽しく、まっすぐ、伝わる英語</p>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>英語、今からでも遅くない。</h2>
-    <p>「読む・聞く・話す・書く」全スキルを、あなたのペースで楽しく習得しましょう。</p>
-    <img class="image-banner" src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80" alt="英語学習イメージ">
-  </section>
-
-  <section>
+  <!-- コース一覧 -->
+  <section id="courses">
     <h2 style="text-align:center;">Maddie English のコース一覧</h2>
     <div class="courses">
       <div class="course-card">
         <h3>やさしい英語入門</h3>
-        <p>ゼロからでも安心。アルファベット・基本フレーズから始める超入門コース。</p>
+        <p>ゼロからでも安心。基本フレーズから始める超入門コース。</p>
       </div>
       <div class="course-card">
         <h3>リスニング & スピーキング特訓</h3>
-        <p>「知ってるのに話せない」人へ。発音＆会話トレーニングで自信アップ。</p>
+        <p>「知ってるのに話せない」人へ。発音＆会話トレーニング。</p>
       </div>
       <div class="course-card">
         <h3>発音トレーニング</h3>
-        <p>カタカナ英語から卒業！通じる発音とリズムを身につける集中コース。</p>
+        <p>カタカナ英語から卒業！通じる発音とリズムを集中習得。</p>
       </div>
       <div class="course-card">
         <h3>総合スキルアップ</h3>
-        <p>読む・書く・話す・聞くをバランスよく伸ばしたい人へ。全方位対応型。</p>
+        <p>読む・書く・話す・聞くをバランスよく伸ばしたい人へ。</p>
       </div>
     </div>
   </section>
 
+  <!-- 教材紹介 -->
+  <section>
+    <h2 style="text-align:center;">教材紹介</h2>
+    <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
+    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
+  </section>
+
+  <!-- コース比較 -->
   <section>
     <h2 style="text-align:center;">コース比較表</h2>
     <table>
@@ -211,13 +265,8 @@
     </table>
   </section>
 
-  <section>
-    <h2 style="text-align:center;">教材紹介</h2>
-    <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
-    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
-  </section>
-
-  <section>
+  <!-- 受講者の声 -->
+  <section id="about">
     <h2 style="text-align:center;">受講者の声</h2>
     <div class="testimonial">
       <strong>まゆこ さん（30代 / OL）</strong>
@@ -233,7 +282,8 @@
     </div>
   </section>
 
-  <footer>
+  <!-- フッター -->
+  <footer id="contact">
     &copy; 2025 Maddie English | All rights reserved
   </footer>
 
