@@ -20,7 +20,8 @@
     font-weight: 600;
     font-size: 1em;
     box-sizing: border-box;
-    transition: top 0.3s ease;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
   }
 
   .nav-logo {
@@ -353,20 +354,17 @@
   const topBar = document.querySelector('.top-bar');
   const topBarHeight = topBar ? topBar.offsetHeight : 0;
 
-  // ページ読み込み時にも正しい位置に
   document.addEventListener('DOMContentLoaded', () => {
-    navbar.style.top = topBarHeight + 'px';
+    navbar.style.transform = `translateY(${topBarHeight}px)`;
   });
 
-  // スクロール時に動かす
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.style.top = '0';
-    } else {
-      navbar.style.top = topBarHeight + 'px';
-    }
+    const scrollY = window.scrollY;
+    const clamped = Math.max(0, topBarHeight - scrollY); // 下限0に制限
+    navbar.style.transform = `translateY(${clamped}px)`;
   });
 </script>
+
 
 <script>
   function toggleMenu() {
