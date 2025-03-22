@@ -12,7 +12,7 @@
       color: #333;
     }
 
-    /* 太いイエローバー */
+    /* トップバー */
     .top-bar {
       background-color: #ffcd1f;
       padding: 10px 20px;
@@ -44,7 +44,7 @@
       background-color: #f5f5f5;
     }
 
-    /* ナビゲーション */
+    /* ナビゲーションバー */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -52,7 +52,7 @@
       background-color: rgba(255, 255, 255, 0.95);
       padding: 10px 20px;
       position: fixed;
-      top: 50px; /* イエローバー分の余白 */
+      top: 50px;
       width: 100%;
       z-index: 1000;
       flex-wrap: wrap;
@@ -126,124 +126,63 @@
       font-size: 1.2em;
     }
 
-    /* お得情報 */
-    .offer {
-      background-color: #fff3cd;
-      border-left: 6px solid #ffcd1f;
-      padding: 30px 20px;
-      margin-top: 40px;
-      border-radius: 10px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+    /* 🎉 お得キャンペーンセクション */
+    .campaign {
+      background: linear-gradient(135deg, #fff176, #ffb74d);
+      color: #333;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    .offer h2 {
-      color: #b35400;
+    .campaign h2 {
+      font-size: 1.8em;
       margin-bottom: 10px;
+      color: #b35400;
     }
 
-    .offer .price {
-      font-size: 1.4em;
-      margin: 10px 0;
+    .campaign .price-box {
+      display: inline-block;
+      background: white;
+      padding: 15px 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      font-size: 1.3em;
     }
 
-    .offer .original-price {
+    .campaign .price-box .original {
       text-decoration: line-through;
       color: #888;
       margin-right: 10px;
     }
 
-    .offer .limited {
-      color: #d32f2f;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 20px 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .courses {
+    .campaign .features {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
+      margin-top: 30px;
     }
 
-    .course-card {
+    .campaign .feature {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 250px;
-      text-align: center;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 1.1em;
     }
 
-    .course-card h3 {
-      margin-top: 0;
-      color: #e65100;
+    .campaign .deadline {
+      margin-top: 30px;
+      font-weight: bold;
+      color: #d32f2f;
+      font-size: 1.1em;
     }
 
-    .image-banner {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin: 30px 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #ffecb3;
-    }
-
-    .testimonial {
-      background-color: #fffde7;
-      border-left: 6px solid #fbc02d;
-      margin: 20px 0;
-      padding: 16px;
-      border-radius: 8px;
-    }
-
-    .testimonial strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    footer {
-      background-color: #ffe082;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    @media (max-width: 700px) {
-      .nav-links {
+    @media (max-width: 600px) {
+      .campaign .features {
         flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-      }
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .top-buttons {
-        margin-top: 10px;
+        align-items: center;
       }
     }
   </style>
@@ -279,18 +218,21 @@
     </div>
   </header>
 
-  <!-- お得情報 -->
-  <section class="offer" id="offer">
-    <h2>🎉 今だけのキャンペーン 🎉</h2>
-    <p class="price">
-      <span class="original-price">通常価格 69,800円</span>
-      → 今だけ <strong>40,000円（税込）</strong><br>
-    </p>
-    <p>月4回のマンツーマン英会話レッスン + コーチング付き！</p>
-    <p class="limited">📅 キャンペーンは5月末まで！</p>
+  <!-- 🎉 リッチなキャンペーン -->
+  <section class="campaign">
+    <h2>🎉 今だけ限定！英会話キャンペーン実施中</h2>
+    <div class="price-box">
+      <span class="original">通常価格 69,800円</span>
+      → 今だけ <strong>40,000円（税込）</strong>
+    </div>
+    <div class="features">
+      <div class="feature">👥 マンツーマンレッスン</div>
+      <div class="feature">💬 コーチング付き</div>
+      <div class="feature">🎁 教材費無料</div>
+    </div>
+    <div class="deadline">📅 5月31日までの期間限定！</div>
   </section>
-
-  <!-- コース紹介 -->
+  <!-- 🧾 コース紹介 -->
   <section id="courses">
     <h2 style="text-align:center;">Maddie English のコース一覧</h2>
     <div class="courses">
@@ -313,8 +255,76 @@
     </div>
   </section>
 
-  <!-- 以下そのまま：教材紹介・比較表・受講者の声・フッター -->
-  <!-- 必要であれば次のメッセージで続きも貼ります！ -->
+  <!-- 📱 教材紹介 -->
+  <section>
+    <h2 style="text-align:center;">教材紹介</h2>
+    <p style="text-align:center;">動画 × スクリプトで学ぶ！スマホで手軽に英語に触れられる学習アプリを使います。</p>
+    <img class="image-banner" src="app.png" alt="アプリ画面イメージ">
+  </section>
+
+  <!-- 📊 コース比較表 -->
+  <section>
+    <h2 style="text-align:center;">コース比較表</h2>
+    <table>
+      <tr>
+        <th>コース名</th>
+        <th>対象レベル</th>
+        <th>特徴</th>
+        <th>1回の時間</th>
+        <th>オンライン</th>
+      </tr>
+      <tr>
+        <td>やさしい英語入門</td>
+        <td>完全初心者</td>
+        <td>基礎フレーズ・発音</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>リスニング＆スピーキング</td>
+        <td>中級</td>
+        <td>会話特訓</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>発音トレーニング</td>
+        <td>初中級</td>
+        <td>発音矯正</td>
+        <td>30分</td>
+        <td>〇</td>
+      </tr>
+      <tr>
+        <td>スキル総合アップ</td>
+        <td>中〜上級</td>
+        <td>全スキル対応</td>
+        <td>60分</td>
+        <td>〇</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 🗣 受講者の声 -->
+  <section id="about">
+    <h2 style="text-align:center;">受講者の声</h2>
+    <div class="testimonial">
+      <strong>まゆこ さん（30代 / OL）</strong>
+      英語は苦手意識がありましたが、Maddie先生のレッスンはとても楽しくて、続けられました！
+    </div>
+    <div class="testimonial">
+      <strong>たかし さん（40代 / 会社員）</strong>
+      発音トレーニングを受けて、自信を持って話せるようになりました！
+    </div>
+    <div class="testimonial">
+      <strong>ゆか さん（高校生）</strong>
+      テスト対策もしてもらえて、学校の成績も上がりました！
+    </div>
+  </section>
+
+  <!-- 📩 フッター -->
+  <footer id="contact">
+    &copy; 2025 Maddie English | All rights reserved
+  </footer>
 
 </body>
 </html>
