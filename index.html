@@ -230,22 +230,6 @@
   overflow: hidden; /* ← 追加：アニメーションに必要 */
 }
 
-/* アンダーライン */
-.real-voices h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 160px; /* ← 長くしました！ */
-  height: 4px;
-  background-color: #ffd54f;
-  transform: translateX(-50%) scaleX(0); /* ← 初期状態：横幅ゼロ */
-  transform-origin: center;
-  border-radius: 2px;
-  animation: underlineExpand 1s ease-out forwards;
-  animation-delay: 0.3s; /* 少し遅れて出てくる */
-}
-
 /* アニメーション定義 */
 .animate-underline {
   font-size: 1.5em;
