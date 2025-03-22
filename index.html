@@ -256,6 +256,35 @@
   }
 }
 
+.animate-underline {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  color: #222;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  overflow: hidden;
+}
+
+.animate-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 320px;
+  height: 4px;
+  background-color: #ffd54f;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  border-radius: 2px;
+  transition: transform 0.6s ease-out;
+}
+
+.animate-underline.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
 .real-voice-grid.fixed-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -364,7 +393,7 @@
   
   <!--こんなひとにおすすめ-->
 <section class="real-voices">
-  <h2>Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
+  <h2 class="animate-underline">Maddie Englishは、英語に悩むあなたのための英会話レッスンです</h2>
   <div class="real-voice-grid fixed-layout">
     
     <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');">
@@ -469,6 +498,28 @@
     }
   });
 </script>
-  
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const target = document.querySelector(".animate-underline");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // 一度だけ発火
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (target) {
+      observer.observe(target);
+    }
+  });
+</script>
+
 </body>
 </html>
