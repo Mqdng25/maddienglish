@@ -217,19 +217,19 @@
 }
     
         /* こんな方におすすめ */
-.voice-section {
+.real-voices {
   background: #fffef8;
   padding: 60px 20px;
   text-align: center;
 }
 
-.voice-section h2 {
+.real-voices h2 {
   font-size: 1.6em;
-  margin-bottom: 40px;
   color: #b35400;
+  margin-bottom: 40px;
 }
 
-.voice-grid {
+.real-voice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
@@ -237,66 +237,52 @@
   margin: 0 auto;
 }
 
-.voice-card {
+.real-voice-card {
   position: relative;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-  background: white;
-  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.voice-img {
-  position: relative;
-}
-
-.voice-img img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-
-/* 吹き出しスタイル */
-.speech-bubble {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-style: italic;
-  color: #444;
-  max-width: 85%;
-  font-size: 0.95em;
-}
-
-.speech-bubble::after {
+.real-voice-card::before {
   content: '';
   position: absolute;
-  bottom: -10px;
-  left: 20px;
-  border-width: 10px 10px 0;
-  border-style: solid;
-  border-color: rgba(255,255,255,0.95) transparent transparent transparent;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* 黒フィルターで文字を読みやすく */
+}
+
+.real-voice-text {
+  position: relative;
+  color: #fff;
+  font-size: 1.1em;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-style: italic;
+  z-index: 2;
+  max-width: 90%;
+  backdrop-filter: blur(3px);
 }
 
 @media (max-width: 600px) {
-  .voice-section h2 {
+  .real-voices h2 {
     font-size: 1.3em;
   }
 
-  .speech-bubble {
-    font-size: 0.9em;
-    bottom: 8px;
-    left: 8px;
-    padding: 10px 14px;
+  .real-voice-card {
+    height: 220px;
   }
 
-  .speech-bubble::after {
-    left: 16px;
+  .real-voice-text {
+    font-size: 0.95em;
+    padding: 16px;
   }
 }
 
@@ -350,65 +336,28 @@
 </section>
   
   <!--こんなひとにおすすめ-->
-<section class="voice-section">
+<section class="real-voices">
   <h2>🌸 Maddie English は、こんなあなたにぴったり！</h2>
-  <div class="voice-grid">
-    <!-- 悩み1 -->
-    <div class="voice-card">
-      <div class="voice-img">
-        <img src="https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=600&q=80" alt="初心者女性">
-        <div class="speech-bubble">中学英語もあやふやで、自信がありません。</div>
-      </div>
+  <div class="real-voice-grid">
+    
+    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');">
+      <div class="real-voice-text">中学英語もあやふやで、自信がありません。</div>
     </div>
 
-    <!-- 悩み2 -->
-    <div class="voice-card">
-      <div class="voice-img">
-        <img src="https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=600&q=80" alt="悩む男性">
-        <div class="speech-bubble">文法はわかるのに、話すとなると口が止まる…</div>
-      </div>
+    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1588350926493-bc887c4f14b1?auto=format&fit=crop&w=800&q=80');">
+      <div class="real-voice-text">文法はわかるのに、話すとなると口が止まる…</div>
     </div>
 
-    <!-- 悩み3 -->
-    <div class="voice-card">
-      <div class="voice-img">
-        <img src="https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=600&q=80" alt="発音に悩む人">
-        <div class="speech-bubble">発音がカタカナになってしまって通じない…</div>
-      </div>
+    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=800&q=80');">
+      <div class="real-voice-text">発音がカタカナになってしまって通じない…</div>
     </div>
 
-    <!-- 悩み4 -->
-    <div class="voice-card">
-      <div class="voice-img">
-        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=600&q=80" alt="試験前の学生">
-        <div class="speech-bubble">英検や試験のために、総合力を伸ばしたい！</div>
-      </div>
+    <div class="real-voice-card" style="background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80');">
+      <div class="real-voice-text">英検や試験のために、総合力を伸ばしたい！</div>
     </div>
+
   </div>
 </section>
-
-  <!-- 🧾 コース紹介 -->
-  <section id="courses">
-    <h2 style="text-align:center;">Maddie English のコース一覧</h2>
-    <div class="courses">
-      <div class="course-card">
-        <h3>やさしい英語入門</h3>
-        <p>ゼロからでも安心。基本フレーズから始める超入門コース。</p>
-      </div>
-      <div class="course-card">
-        <h3>リスニング & スピーキング特訓</h3>
-        <p>「知ってるのに話せない」人へ。発音＆会話トレーニング。</p>
-      </div>
-      <div class="course-card">
-        <h3>発音トレーニング</h3>
-        <p>カタカナ英語から卒業！通じる発音とリズムを集中習得。</p>
-      </div>
-      <div class="course-card">
-        <h3>総合スキルアップ</h3>
-        <p>読む・書く・話す・聞くをバランスよく伸ばしたい人へ。</p>
-      </div>
-    </div>
-  </section>
 
   <!-- 📱 教材紹介 -->
   <section>
