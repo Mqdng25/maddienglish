@@ -151,27 +151,29 @@
     }
 
     /* 背景となる黄色いバー */
-.campaign-wrapper {
-  background-color: #fff4c2;
+.campaign-section {
+  background-color: #fff4c2; /* やわらかい黄色 */
   padding: 80px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* キャンペーンボックス */
-.campaign {
-  background-color: #fff;
+/* 白いボックス部分 */
+.campaign-box {
+  background-color: #ffffff;
   border-radius: 16px;
   padding: 48px 32px;
   max-width: 700px;
   width: 100%;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* 中身のスタイル */
-.campaign-content h2 {
+/* テキストや価格など */
+.campaign-box h2 {
   font-size: 1.8rem;
   color: #444;
   margin-bottom: 20px;
@@ -262,8 +264,8 @@
     </div>
   </header>
   <!-- ✅ キャンペーンセクション -->
-  <section class="campaign">
-  <div class="campaign-content">
+  <section class="campaign-section">
+  <div class="campaign-box">
     <h2>🌼 今だけ！英会話キャンペーン実施中</h2>
     <p class="price">
       通常価格 <span class="old-price">69,800円</span> → <span class="new-price">今だけ 40,000円（税込）</span>
