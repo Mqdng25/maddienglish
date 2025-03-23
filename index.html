@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maddie English</title>
@@ -613,6 +614,18 @@
     const menu = document.getElementById('navMenu');
     menu.classList.toggle('active');
   }
+</script>
+<!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 800);
+  });
 </script>
 
 </body>
