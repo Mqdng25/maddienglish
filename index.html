@@ -388,22 +388,51 @@
   }
 }
     
- .feature-card {
-  background-color: #ffffff;
-  border: 1px solid #dfe4e0;
-  border-radius: 12px;
-  padding: 20px;
+ .why-maddie-section {
+  background-color: #f6f6f3;
+  padding: 60px 20px;
+}
+
+.why-maddie-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.why-maddie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+}
+
+.why-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.why-card p {
   font-size: 0.95rem;
+  padding: 16px;
   line-height: 1.6;
-  color: #2f3e46;
-  box-shadow: none;
-  transition: background-color 0.2s ease;
+  color: #444;
 }
-
-.feature-card:hover {
-  background-color: #f0f1ee;
-}
-
     
   </style>
 </head>
@@ -509,35 +538,40 @@
     </div>
     
 <!-- ✅ Maddie English が選ばれる理由（北欧シンプル版） -->
-<section class="features-section" style="background: #f6f7f4; padding: 60px 20px;">
-  <h2 style="text-align:center; font-size: 1.8em; margin-bottom: 40px; color: #2f3e46;">
-    Maddie Englishが選ばれる6つの理由
-  </h2>
-  <div class="features-grid" style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    max-width: 960px;
-    margin: 0 auto;
-  ">
-    <div class="feature-card">📚 <strong>レベルに合ったテキスト</strong><br>
-      初心者から上級者まで、自分に合った教材で安心して学べます。
+<section class="why-maddie-section">
+  <h2 class="why-maddie-heading">Maddie English が選ばれる理由</h2>
+  <div class="why-maddie-grid">
+    
+    <div class="why-card">
+      <img src="images/level-text.jpg" alt="教材写真" class="why-image">
+      <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
     </div>
-    <div class="feature-card">🌍 <strong>あらゆるトピックに対応</strong><br>
-      日常英会話からビジネス、旅行、試験対策まで幅広くカバー。
+
+    <div class="why-card">
+      <img src="images/topics.jpg" alt="トピック写真" class="why-image">
+      <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。必要な力をバランスよく伸ばせます。</p>
     </div>
-    <div class="feature-card">👩‍🏫 <strong>実力派講師による丁寧な指導</strong><br>
-      経験豊富な講師が、一人ひとりに合わせたレッスンを行います。
+
+    <div class="why-card">
+      <img src="images/teacher.jpg" alt="講師の写真" class="why-image">
+      <p>豊富な経験を持つ講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
     </div>
-    <div class="feature-card">📱 <strong>スマホで学べる教材</strong><br>
-      アプリでどこでも学習。動画とスクリプトで効率よく学べます。
+
+    <div class="why-card">
+      <img src="images/mobile-app.jpg" alt="スマホ学習写真" class="why-image">
+      <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく英語力を伸ばします。</p>
     </div>
-    <div class="feature-card">📝 <strong>発音・ライティングの添削</strong><br>
-      録音や文章に対する個別フィードバックで着実にステップアップ。
+
+    <div class="why-card">
+      <img src="images/feedback.jpg" alt="フィードバック写真" class="why-image">
+      <p>あなたの弱点やクセをしっかり分析。録音や文章への個別アドバイスで着実に上達。</p>
     </div>
-    <div class="feature-card">🤝 <strong>定期カウンセリング</strong><br>
-      学習進捗を一緒に確認し、モチベーションも継続できます。
+
+    <div class="why-card">
+      <img src="images/support.jpg" alt="カウンセリング写真" class="why-image">
+      <p>進捗確認・目標設定を一緒に行い、モチベーション維持をサポートします。</p>
     </div>
+
   </div>
 </section>
 
