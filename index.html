@@ -367,18 +367,20 @@
   }
 
   .voice-box {
-    height: auto;
-    min-height: 90px;
-    padding: 0 10px; /* ✅ テキストが左右に当たらないように */
+    height: auto;                      /* ← 高さ自動調整 */
+    padding: 0;                        /* ← 余白リセット（中央寄せのため） */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .voice-text {
-    white-space: nowrap;              /* 改行させない */
-    overflow: hidden;                 /* はみ出さない */
-    text-overflow: clip;              /* 省略記号「…」も消す */
-    font-size: min(4vw, 1rem);        /* 自動で縮小 */
-    max-width: 100%;                  /* ボックスに収める */
-    padding: 6px 12px;
+    white-space: nowrap;              /* ← 改行させない */
+    overflow: hidden;                 /* ← はみ出しを隠す */
+    text-overflow: clip;              /* ← 「…」も出さない */
+    font-size: min(3.2vw, 0.85rem);   /* ← スマホ画面幅に応じて縮小 */
+    max-width: 90%;                   /* ← テキストボックスの幅を制限 */
+    padding: 6px 8px;                 /* ← 横の余白を小さくして収める */
     text-align: center;
     box-sizing: border-box;
   }
