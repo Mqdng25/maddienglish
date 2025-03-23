@@ -387,7 +387,7 @@
     box-sizing: border-box;
   }
 }
-    .why-choose {
+   .why-choose {
   background-color: #fffdea;
   padding: 60px 20px;
   text-align: center;
@@ -407,7 +407,7 @@
 
 .reasons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
@@ -416,32 +416,35 @@
 .reason-card {
   background: #fff;
   border-radius: 12px;
-  padding: 24px;
+  padding: 0 0 24px;
   box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.8);
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .reason-card:hover {
   transform: translateY(-6px);
 }
 
-.reason-card span {
-  font-size: 2em;
+.reason-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   display: block;
-  margin-bottom: 12px;
+  border-bottom: 4px solid #ffe082;
 }
 
 .reason-card h3 {
   font-size: 1.1em;
-  margin-bottom: 8px;
+  margin: 16px 0 8px;
   color: #333;
 }
 
 .reason-card p {
   font-size: 0.95em;
   color: #555;
+  padding: 0 16px;
 }
-
     
   </style>
 </head>
@@ -552,42 +555,43 @@
 
   <div class="reasons-grid">
     <div class="reason-card">
-      <span>📚</span>
+      <img src="https://source.unsplash.com/300x200/?notebook,study" alt="テキスト">
       <h3>レベルに合ったテキスト</h3>
       <p>初心者から上級者まで、一人ひとりに合った教材で安心してスタート。</p>
     </div>
 
     <div class="reason-card">
-      <span>🌍</span>
+      <img src="https://source.unsplash.com/300x200/?global,communication" alt="トピック">
       <h3>あらゆるトピックを網羅</h3>
-      <p>日常英会話、ビジネス、旅行、試験対策まで幅広く対応。</p>
+      <p>日常会話、ビジネス、旅行、試験対策まで幅広く対応。</p>
     </div>
 
     <div class="reason-card">
-      <span>👩‍🏫</span>
+      <img src="https://source.unsplash.com/300x200/?teacher,classroom" alt="講師">
       <h3>実力派講師の丁寧な指導</h3>
       <p>経験豊富な講師が、あなたの目標に寄り添ってサポート。</p>
     </div>
 
     <div class="reason-card">
-      <span>📱</span>
+      <img src="https://source.unsplash.com/300x200/?smartphone,app" alt="アプリ">
       <h3>スマホでも学べるアプリ教材</h3>
       <p>動画×スクリプトで、スキマ時間に効率よく学べる学習アプリ付き。</p>
     </div>
 
     <div class="reason-card">
-      <span>📝</span>
+      <img src="https://source.unsplash.com/300x200/?writing,feedback" alt="フィードバック">
       <h3>発音・ライティングのフィードバック</h3>
       <p>録音や文章への個別アドバイスで、正しく伝わる英語を習得。</p>
     </div>
 
     <div class="reason-card">
-      <span>🤝</span>
+      <img src="https://source.unsplash.com/300x200/?meeting,online" alt="カウンセリング">
       <h3>定期カウンセリング</h3>
       <p>進捗確認や目標設定で、モチベーションをしっかりキープ。</p>
     </div>
   </div>
 </section>
+
     
   </section>
   <!-- ✅ 教材紹介 -->
