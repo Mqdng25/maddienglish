@@ -619,34 +619,34 @@
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const trigger = document.getElementById('confetti-trigger');
+    const triggerButton = document.querySelector('.cta-button'); // ボタンが見えたら
+    const originElement = document.getElementById('confetti-trigger'); // 発射位置
 
-    if (!trigger) return;
+    if (!triggerButton || !originElement) return;
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // キャンペーン見出しの位置を取得
-          const rect = trigger.getBoundingClientRect();
+          const rect = originElement.getBoundingClientRect();
           const yPos = rect.top / window.innerHeight;
 
           confetti({
-            particleCount: 120,
+            particleCount: 100,
             spread: 80,
             origin: {
-              x: 0.5,        // 中央から
-              y: yPos        // ビューポートに対する相対位置
+              x: 0.5,
+              y: yPos
             }
           });
 
-          observer.unobserve(entry.target); // 一度だけ
+          observer.unobserve(entry.target); // 一度だけ発射
         }
       });
     }, {
       threshold: 0.6
     });
 
-    observer.observe(trigger);
+    observer.observe(triggerButton);
   });
 </script>
 
