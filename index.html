@@ -325,6 +325,7 @@
   .voice-box {
     width: 100%;
     max-width: none;
+    height: 280px; /* ✅ PC表示で固定 */
   }
 
   .voice-text {
@@ -334,25 +335,30 @@
     max-width: 100%;
   }
 }
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
   .real-voice-grid {
     grid-template-columns: 1fr;
   }
 
+  .real-voices {
+    overflow-x: hidden; /* ← 念のためセクション全体ではみ出し防止 */
+  }
+
   .voice-box {
     max-width: 100%;
-    height: auto;           /* ✅ 追加！ */
-    min-height: 140px;      /* ✅ 追加！ */
+    height: auto;
+    min-height: 140px;
   }
 
   .voice-text {
-    white-space: nowrap;
-    overflow: visible;
+    white-space: nowrap; /* 改行しない */
+    overflow: visible;   /* はみ出しなくす */
     text-overflow: unset;
-    font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+    font-size: clamp(0.7rem, 3.5vw, 1rem); /* ← 小さくして収める */
     text-align: center;
     max-width: 100%;
-    padding: 12px 16px;     /* ✅ 追加！ */
+    box-sizing: border-box;
+    padding: 10px; /* ← 横幅を抑えるために少し狭める */
   }
 }
     
