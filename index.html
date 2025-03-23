@@ -295,18 +295,19 @@
 .voice-box {
   padding: 16px 20px;
   width: 100%;
-}
-    
+  max-width: 400px;
+}   
 
 /* 吹き出しテキストスタイル（共通） */
-.voice-text {
-  max-width: 100%;           /* ← 必須：HTMLの90%指定を上書き */
-  width: 100%;               /* ← ボックスいっぱいに広げる */
+    .voice-text {
+  width: 100%;             /* 吹き出しを親ボックスの幅に合わせる */
+  max-width: 80%;          /* 全体に対して80%の横幅に収める */
   font-size: 1.05em;
   line-height: 1.6;
   text-align: center;
   white-space: normal;
   overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* ボックスのグリッド配置（PC・タブレットで中央揃え） */
