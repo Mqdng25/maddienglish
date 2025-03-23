@@ -429,13 +429,13 @@
     <div class="campaign-box">
 
       <!-- 🔽 ボックスの中にラベルを移動！ -->
-      <div class="campaign-heading" id="confetti-trigger">
+      <div class="campaign-heading">
   🌼 今だけ！春のキャンペーン実施中
 </div>
 
-      <p class="price">
-        <span class="old-price">69,800円</span> → <span class="new-price">40,000円（税込）</span>
-      </p>
+      <p class="price" id="confetti-trigger">
+  <span class="old-price">69,800円</span> → <span class="new-price">40,000円（税込）</span>
+</p>
       <ul class="features">
         <li>マンツーマンレッスン</li>
         <li>コーチング付き</li>
@@ -619,8 +619,8 @@
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const triggerButton = document.querySelector('.cta-button'); // ボタンが見えたら
-    const originElement = document.getElementById('confetti-trigger'); // 発射位置
+    const triggerButton = document.querySelector('.cta-button'); // 「今すぐ申し込む」ボタン
+    const originElement = document.getElementById('confetti-trigger'); // 発射位置の要素（価格表示）
 
     if (!triggerButton || !originElement) return;
 
