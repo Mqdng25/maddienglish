@@ -618,13 +618,28 @@
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
+    const ctaButton = document.querySelector('.cta-button');
+
+    if (!ctaButton) return;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 🎉 紙吹雪を一度だけ発動
+          confetti({
+            particleCount: 120,
+            spread: 80,
+            origin: { y: 0.6 }
+          });
+
+          observer.unobserve(entry.target); // 一度で止める
+        }
       });
-    }, 800);
+    }, {
+      threshold: 0.6 // 60%以上見えたら発動
+    });
+
+    observer.observe(ctaButton);
   });
 </script>
 
