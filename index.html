@@ -388,26 +388,56 @@
   }
 }
     
+/* ====== 背景と全体レイアウト ====== */
 .reason-section {
   background-color: #f8f8f8;
-  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px 80px;
+  z-index: 1;
+}
+.reason-section::before,
+.reason-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: #ffb74d;
+  z-index: 0;
+  opacity: 0.2;
+}
+.reason-section::before {
+  width: 280px;
+  height: 280px;
+  top: -100px;
+  left: -100px;
+  transform: rotate(-15deg);
+}
+.reason-section::after {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: -80px;
+  transform: rotate(30deg);
 }
 
+/* ====== ボックス全体 ====== */
 .reason-wrapper {
   max-width: 1040px;
   margin: 0 auto;
   background-color: #fff;
   padding: 60px 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  position: relative;
 }
 
+/* ====== 見出し ====== */
 .reason-title {
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 8px;
 }
-
 .reason-subtitle {
   text-align: center;
   color: #666;
@@ -415,61 +445,55 @@
   margin-bottom: 48px;
 }
 
+/* ====== グリッドレイアウト ====== */
 .reason-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid #eee;
-  border-right: none;
-  border-bottom: none;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px 24px;
 }
 
+/* ====== 各理由ボックス ====== */
 .reason-box {
-  padding: 30px 20px;
-  border-right: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   text-align: center;
 }
-
 .reason-box img {
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   margin-bottom: 16px;
-  filter: hue-rotate(-10deg) saturate(1.2) brightness(1.1);
+  object-fit: cover;
+  border-radius: 8px;
 }
-
 .reason-box h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #333;
 }
-
 .reason-box p {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
 }
 
-.reason-button-wrapper {
-  margin-top: 40px;
+/* ====== ボタン ====== */
+.reason-button {
+  margin-top: 48px;
   text-align: center;
 }
-
-.reason-button {
-  background: #ff6f00;
+.reason-cta {
+  display: inline-block;
+  background-color: #333;
   color: #fff;
   padding: 12px 28px;
-  font-weight: bold;
   border-radius: 999px;
   text-decoration: none;
+  font-weight: bold;
   font-size: 0.95rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
-
-.reason-button:hover {
-  background: #e65100;
+.reason-cta:hover {
+  background-color: #000;
 }
+
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
@@ -589,46 +613,46 @@
 </div>
     </div>
 
-  <section class="reason-section">
+、<section class="reason-section">
   <div class="reason-wrapper">
     <h2 class="reason-title">REASON WHY</h2>
     <p class="reason-subtitle">Maddie Englishが選ばれる理由</p>
 
     <div class="reason-grid">
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/346222/book.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?textbook,study" alt="テキスト" />
         <h3>レベルに合ったテキスト</h3>
         <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
       </div>
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/354372/globe-alt.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?topics,discussion" alt="トピック" />
         <h3>あらゆるトピックを網羅</h3>
-        <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。</p>
+        <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。必要な力をバランスよく伸ばせます。</p>
       </div>
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/382222/teacher.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?teacher,classroom" alt="講師" />
         <h3>実力派講師の丁寧な指導</h3>
         <p>豊富な経験を持つ講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
       </div>
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/499982/smartphone.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?smartphone,app" alt="アプリ" />
         <h3>スマホでも学べるアプリ教材</h3>
-        <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく学習。</p>
+        <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく英語力を伸ばします。</p>
       </div>
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/417784/edit-text.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?writing,feedback" alt="フィードバック" />
         <h3>発音・ライティングの個別フィードバック</h3>
-        <p>録音や文章への個別アドバイスで、あなたの弱点やクセをしっかり分析。</p>
+        <p>あなたの弱点やクセをしっかり分析。録音や文章への個別アドバイスで着実に上達。</p>
       </div>
       <div class="reason-box">
-        <img src="https://www.svgrepo.com/show/493338/chat-2.svg" alt="" />
+        <img src="https://source.unsplash.com/100x100/?consulting,support" alt="カウンセリング" />
         <h3>定期カウンセリングで安心サポート</h3>
-        <p>進捗確認・目標設定を一緒に行い、モチベーション維持を支援します。</p>
+        <p>進捗確認・目標設定を一緒に行い、モチベーション維持をサポートします。</p>
       </div>
     </div>
 
-    <div class="reason-button-wrapper">
-      <a href="#contact" class="reason-button">VIEW MORE</a>
+    <div class="reason-button">
+      <a href="#contact" class="reason-cta">VIEW MORE</a>
     </div>
   </div>
 </section>
