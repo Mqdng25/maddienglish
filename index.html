@@ -387,6 +387,61 @@
     box-sizing: border-box;
   }
 }
+    .why-choose {
+  background-color: #fffdea;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8em;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 40px;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-6px);
+}
+
+.reason-card span {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.reason-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.reason-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
     
   </style>
 </head>
@@ -490,6 +545,50 @@
   <div class="voice-overlay"></div>
 </div>
     </div>
+    
+<section class="why-choose">
+  <h2 class="section-title">Maddie English が選ばれる 6つの理由</h2>
+  <p class="lead">多くの学習者に選ばれている理由があります。<br>Maddie Englishが支持される6つのポイントをご紹介します。</p>
+
+  <div class="reasons-grid">
+    <div class="reason-card">
+      <span>📚</span>
+      <h3>レベルに合ったテキスト</h3>
+      <p>初心者から上級者まで、一人ひとりに合った教材で安心してスタート。</p>
+    </div>
+
+    <div class="reason-card">
+      <span>🌍</span>
+      <h3>あらゆるトピックを網羅</h3>
+      <p>日常英会話、ビジネス、旅行、試験対策まで幅広く対応。</p>
+    </div>
+
+    <div class="reason-card">
+      <span>👩‍🏫</span>
+      <h3>実力派講師の丁寧な指導</h3>
+      <p>経験豊富な講師が、あなたの目標に寄り添ってサポート。</p>
+    </div>
+
+    <div class="reason-card">
+      <span>📱</span>
+      <h3>スマホでも学べるアプリ教材</h3>
+      <p>動画×スクリプトで、スキマ時間に効率よく学べる学習アプリ付き。</p>
+    </div>
+
+    <div class="reason-card">
+      <span>📝</span>
+      <h3>発音・ライティングのフィードバック</h3>
+      <p>録音や文章への個別アドバイスで、正しく伝わる英語を習得。</p>
+    </div>
+
+    <div class="reason-card">
+      <span>🤝</span>
+      <h3>定期カウンセリング</h3>
+      <p>進捗確認や目標設定で、モチベーションをしっかりキープ。</p>
+    </div>
+  </div>
+</section>
+    
   </section>
   <!-- ✅ 教材紹介 -->
   <section>
