@@ -388,59 +388,92 @@
   }
 }
     
-.why-choose-maddie {
-  background: #f7f7f7;
-  padding: 80px 20px;
+.reason-why {
+  background: #fff;
+  padding: 60px 20px;
 }
 
-.why-title {
+.reason-container {
+  max-width: 960px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 2rem;
+}
+
+.reason-why h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+
+.reason-why .subheading {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #eee;
+  border-right: none;
+  border-bottom: none;
+}
+
+.reason-item {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 30px 20px;
+}
+
+.reason-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.reason-item h3 {
+  font-size: 1em;
   font-weight: 600;
-  margin-bottom: 48px;
+  margin-bottom: 10px;
   color: #333;
 }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.why-item {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  padding: 32px 24px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.why-item:hover {
-  transform: translateY(-4px);
-}
-
-.why-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 16px;
-  opacity: 0.9;
-}
-
-.why-item h3 {
-  font-size: 1.1rem;
-  color: #222;
-  margin-bottom: 12px;
-}
-
-.why-item p {
-  font-size: 0.95rem;
+.reason-item p {
+  font-size: 0.95em;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.5;
 }
-    
+
+.view-more-wrapper {
+  margin-top: 40px;
+}
+
+.view-more-button {
+  display: inline-block;
+  background: #1e1e1e;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.view-more-button:hover {
+  background: #333;
+}
+
+/* レスポンシブ対応（スマホ） */
+@media (max-width: 768px) {
+  .reason-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reason-item {
+    border-right: none;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -543,54 +576,50 @@
   <div class="voice-overlay"></div>
 </div>
     </div>
-    
-<section class="why-choose-maddie">
-  <h2 class="why-title">Maddie Englishが選ばれる理由</h2>
-  <div class="why-grid">
 
-    <div class="why-item">
-      <img src="icon-book.svg" alt="テキスト" class="why-icon">
-      <h3>レベルに合ったテキスト</h3>
-      <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
+    <section class="reason-why">
+  <div class="reason-container">
+    <h2>REASON WHY</h2>
+    <p class="subheading">Maddie Englishが選ばれる理由</p>
+
+    <div class="reason-grid">
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/346222/book.svg" alt="教材" />
+        <h3>レベルに合ったテキスト</h3>
+        <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
+      </div>
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/354372/globe-alt.svg" alt="トピック" />
+        <h3>あらゆるトピックを網羅</h3>
+        <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。</p>
+      </div>
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/382222/teacher.svg" alt="講師" />
+        <h3>実力派講師の丁寧な指導</h3>
+        <p>豊富な経験を持つ講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
+      </div>
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/499982/smartphone.svg" alt="アプリ" />
+        <h3>スマホでも学べるアプリ教材</h3>
+        <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく学習。</p>
+      </div>
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/417784/edit-text.svg" alt="フィードバック" />
+        <h3>発音・ライティングの個別フィードバック</h3>
+        <p>あなたの弱点やクセをしっかり分析し、録音や文章への個別アドバイスを提供。</p>
+      </div>
+      <div class="reason-item">
+        <img src="https://www.svgrepo.com/show/493338/chat-2.svg" alt="サポート" />
+        <h3>定期カウンセリングで安心サポート</h3>
+        <p>進捗確認・目標設定を一緒に行い、モチベーション維持を支援します。</p>
+      </div>
     </div>
 
-    <div class="why-item">
-      <img src="icon-globe.svg" alt="トピック" class="why-icon">
-      <h3>あらゆるトピックを網羅</h3>
-      <p>日常英会話、ビジネス英語、旅行、試験対策まで対応。</p>
+    <div class="view-more-wrapper">
+      <a href="#contact" class="view-more-button">VIEW MORE</a>
     </div>
-
-    <div class="why-item">
-      <img src="icon-teacher.svg" alt="講師" class="why-icon">
-      <h3>実力派講師の丁寧な指導</h3>
-      <p>経験豊富な講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
-    </div>
-
-    <div class="why-item">
-      <img src="icon-mobile.svg" alt="スマホ" class="why-icon">
-      <h3>スマホでも学べるアプリ教材</h3>
-      <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率的に。</p>
-    </div>
-
-    <div class="why-item">
-      <img src="icon-edit.svg" alt="フィードバック" class="why-icon">
-      <h3>発音・ライティングの個別フィードバック</h3>
-      <p>録音や文章へのアドバイスで、苦手ポイントを着実に克服。</p>
-    </div>
-
-    <div class="why-item">
-      <img src="icon-support.svg" alt="サポート" class="why-icon">
-      <h3>定期カウンセリングで安心サポート</h3>
-      <p>進捗確認や目標設定を一緒に行い、モチベーションを維持できます。</p>
-    </div>
-
   </div>
 </section>
-
-
-  </div>
-</section>
-
     
   </section>
   <!-- ✅ 教材紹介 -->
