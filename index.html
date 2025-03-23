@@ -425,8 +425,10 @@
   </header>
   <!-- ✅ キャンペーンセクション -->
  <section class="campaign-section">
+   <div class="campaign-heading" id="confetti-trigger">
+  🌼 今だけ！英会話キャンペーン実施中
+</div>
   <div class="campaign-container">
-
     <div class="campaign-box">
 
       <!-- 🔽 ボックスの中にラベルを移動！ -->
@@ -618,28 +620,34 @@
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const ctaButton = document.querySelector('.cta-button');
+    const trigger = document.getElementById('confetti-trigger');
 
-    if (!ctaButton) return;
+    if (!trigger) return;
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // 🎉 紙吹雪を一度だけ発動
+          // キャンペーン見出しの位置を取得
+          const rect = trigger.getBoundingClientRect();
+          const yPos = rect.top / window.innerHeight;
+
           confetti({
             particleCount: 120,
             spread: 80,
-            origin: { y: 0.6 }
+            origin: {
+              x: 0.5,        // 中央から
+              y: yPos        // ビューポートに対する相対位置
+            }
           });
 
-          observer.unobserve(entry.target); // 一度で止める
+          observer.unobserve(entry.target); // 一度だけ
         }
       });
     }, {
-      threshold: 0.6 // 60%以上見えたら発動
+      threshold: 0.6
     });
 
-    observer.observe(ctaButton);
+    observer.observe(trigger);
   });
 </script>
 
