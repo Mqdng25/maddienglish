@@ -387,64 +387,23 @@
     box-sizing: border-box;
   }
 }
-   .why-choose {
-  background-color: #fffdea;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 1.8em;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.lead {
-  color: #555;
-  font-size: 1em;
-  margin-bottom: 40px;
-}
-
-.reasons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reason-card {
-  background: #fff;
+    
+ .feature-card {
+  background-color: #ffffff;
+  border: 1px solid #dfe4e0;
   border-radius: 12px;
-  padding: 0 0 24px;
-  box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.8);
-  transition: transform 0.3s ease;
-  overflow: hidden;
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2f3e46;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
 }
 
-.reason-card:hover {
-  transform: translateY(-6px);
+.feature-card:hover {
+  background-color: #f0f1ee;
 }
 
-.reason-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 4px solid #ffe082;
-}
-
-.reason-card h3 {
-  font-size: 1.1em;
-  margin: 16px 0 8px;
-  color: #333;
-}
-
-.reason-card p {
-  font-size: 0.95em;
-  color: #555;
-  padding: 0 16px;
-}
     
   </style>
 </head>
@@ -549,45 +508,35 @@
 </div>
     </div>
     
-<section class="why-choose">
-  <h2 class="section-title">Maddie English が選ばれる 6つの理由</h2>
-  <p class="lead">多くの学習者に選ばれている理由があります。<br>Maddie Englishが支持される6つのポイントをご紹介します。</p>
-
-  <div class="reasons-grid">
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?notebook,study" alt="テキスト">
-      <h3>レベルに合ったテキスト</h3>
-      <p>初心者から上級者まで、一人ひとりに合った教材で安心してスタート。</p>
+<!-- ✅ Maddie English が選ばれる理由（北欧シンプル版） -->
+<section class="features-section" style="background: #f6f7f4; padding: 60px 20px;">
+  <h2 style="text-align:center; font-size: 1.8em; margin-bottom: 40px; color: #2f3e46;">
+    Maddie Englishが選ばれる6つの理由
+  </h2>
+  <div class="features-grid" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  ">
+    <div class="feature-card">📚 <strong>レベルに合ったテキスト</strong><br>
+      初心者から上級者まで、自分に合った教材で安心して学べます。
     </div>
-
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?global,communication" alt="トピック">
-      <h3>あらゆるトピックを網羅</h3>
-      <p>日常会話、ビジネス、旅行、試験対策まで幅広く対応。</p>
+    <div class="feature-card">🌍 <strong>あらゆるトピックに対応</strong><br>
+      日常英会話からビジネス、旅行、試験対策まで幅広くカバー。
     </div>
-
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?teacher,classroom" alt="講師">
-      <h3>実力派講師の丁寧な指導</h3>
-      <p>経験豊富な講師が、あなたの目標に寄り添ってサポート。</p>
+    <div class="feature-card">👩‍🏫 <strong>実力派講師による丁寧な指導</strong><br>
+      経験豊富な講師が、一人ひとりに合わせたレッスンを行います。
     </div>
-
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?smartphone,app" alt="アプリ">
-      <h3>スマホでも学べるアプリ教材</h3>
-      <p>動画×スクリプトで、スキマ時間に効率よく学べる学習アプリ付き。</p>
+    <div class="feature-card">📱 <strong>スマホで学べる教材</strong><br>
+      アプリでどこでも学習。動画とスクリプトで効率よく学べます。
     </div>
-
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?writing,feedback" alt="フィードバック">
-      <h3>発音・ライティングのフィードバック</h3>
-      <p>録音や文章への個別アドバイスで、正しく伝わる英語を習得。</p>
+    <div class="feature-card">📝 <strong>発音・ライティングの添削</strong><br>
+      録音や文章に対する個別フィードバックで着実にステップアップ。
     </div>
-
-    <div class="reason-card">
-      <img src="https://source.unsplash.com/300x200/?meeting,online" alt="カウンセリング">
-      <h3>定期カウンセリング</h3>
-      <p>進捗確認や目標設定で、モチベーションをしっかりキープ。</p>
+    <div class="feature-card">🤝 <strong>定期カウンセリング</strong><br>
+      学習進捗を一緒に確認し、モチベーションも継続できます。
     </div>
   </div>
 </section>
