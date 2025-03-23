@@ -392,10 +392,25 @@
 .reason-section {
   background-color: #f8f8f8;
   position: relative;
+  padding: 100px 20px 80px;
   overflow: hidden;
-  padding: 120px 20px 80px;
-  z-index: 1;
 }
+
+.reason-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.reason-heading h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+.reason-heading p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* 背景のオレンジアクセント（豆型） */
 .reason-section::before,
 .reason-section::after {
   content: "";
@@ -406,88 +421,74 @@
   opacity: 0.2;
 }
 .reason-section::before {
-  width: 280px;
-  height: 280px;
-  top: -100px;
+  width: 260px;
+  height: 260px;
+  top: -80px;
   left: -100px;
-  transform: rotate(-15deg);
+  transform: rotate(-20deg);
 }
 .reason-section::after {
   width: 200px;
   height: 200px;
-  bottom: -80px;
+  bottom: -60px;
   right: -80px;
-  transform: rotate(30deg);
+  transform: rotate(20deg);
 }
 
-/* ====== ボックス全体 ====== */
+/* 白いボックス */
 .reason-wrapper {
-  max-width: 1040px;
-  margin: 0 auto;
   background-color: #fff;
-  padding: 60px 40px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  z-index: 1;
+  padding: 40px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
   position: relative;
+  z-index: 1;
 }
 
-/* ====== 見出し ====== */
-.reason-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 8px;
-}
-.reason-subtitle {
-  text-align: center;
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 48px;
-}
-
-/* ====== グリッドレイアウト ====== */
+/* グリッド */
 .reason-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px 24px;
+  gap: 36px 24px;
 }
 
-/* ====== 各理由ボックス ====== */
+/* 各項目 */
 .reason-box {
   text-align: center;
 }
 .reason-box img {
   width: 64px;
   height: 64px;
-  margin-bottom: 16px;
   object-fit: cover;
+  margin-bottom: 12px;
   border-radius: 8px;
 }
 .reason-box h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
   color: #333;
 }
 .reason-box p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
   line-height: 1.6;
 }
 
-/* ====== ボタン ====== */
+/* ボタン */
 .reason-button {
-  margin-top: 48px;
   text-align: center;
+  margin-top: 40px;
 }
 .reason-cta {
-  display: inline-block;
   background-color: #333;
   color: #fff;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 999px;
-  text-decoration: none;
+  font-size: 0.9rem;
   font-weight: bold;
-  font-size: 0.95rem;
+  text-decoration: none;
   transition: background 0.3s;
 }
 .reason-cta:hover {
@@ -613,12 +614,17 @@
 </div>
     </div>
 
-、<section class="reason-section">
-  <div class="reason-wrapper">
-    <h2 class="reason-title">REASON WHY</h2>
-    <p class="reason-subtitle">Maddie Englishが選ばれる理由</p>
+<section class="reason-section">
+  <!-- 見出し（グレー背景上に直接） -->
+  <div class="reason-heading">
+    <h2>REASON WHY</h2>
+    <p>Maddie Englishが選ばれる理由</p>
+  </div>
 
+  <!-- 白いボックス -->
+  <div class="reason-wrapper">
     <div class="reason-grid">
+      <!-- 以下、各理由ボックスは前回と同じ -->
       <div class="reason-box">
         <img src="https://source.unsplash.com/100x100/?textbook,study" alt="テキスト" />
         <h3>レベルに合ったテキスト</h3>
