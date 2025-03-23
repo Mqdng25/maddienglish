@@ -285,9 +285,9 @@
   background-color: #c0392b;
 }
 
-    /* ==== Real Voiceセクション用のスタイル（完全版） ==== */
+/* ======== Real Voice 共通スタイル ======== */
 
-/* 各ボックス背景画像クラス */
+/* 背景画像クラス */
 .voice-bg-1 {
   background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');
 }
@@ -301,7 +301,18 @@
   background-image: url('https://images.unsplash.com/photo-1534294228305-3c8e93df1e66?auto=format&fit=crop&w=800&q=80');
 }
 
-/* ボックス全体のスタイル */
+/* グリッド全体 */
+.real-voice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* ✅ 各ボックスの間に余白 */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+  justify-items: center;
+}
+
+/* ボックス全体 */
 .voice-box {
   position: relative;
   border-radius: 16px;
@@ -315,11 +326,10 @@
   background-position: center;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
-  height: 280px; /* PCでの高さ固定 */
+  height: 280px;
 }
 
-/* テキスト吹き出し */
+/* 吹き出し */
 .voice-text {
   position: relative;
   color: #fff;
@@ -340,7 +350,7 @@
   font-size: 1rem;
 }
 
-/* 黒の半透明オーバーレイ */
+/* オーバーレイ */
 .voice-overlay {
   position: absolute;
   inset: 0;
@@ -348,8 +358,13 @@
   z-index: 1;
 }
 
-/* スマホ対応 */
+/* ======== スマホ対応（縦1列・余白）======== */
 @media (max-width: 768px) {
+  .real-voice-grid {
+    grid-template-columns: 1fr;
+    gap: 24px; /* ✅ スマホ時の縦の余白も調整 */
+  }
+
   .voice-box {
     height: auto;
     min-height: 140px;
@@ -357,11 +372,10 @@
 
   .voice-text {
     font-size: clamp(0.7rem, 3.5vw, 0.95rem);
-    padding: 10px 12px;
+    padding: 10px 14px;
     max-width: 95%;
   }
 }
-
     
   </style>
 </head>
