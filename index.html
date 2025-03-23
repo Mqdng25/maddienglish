@@ -321,12 +321,19 @@
   justify-items: center; /* ← 中央揃えになる決め手！ */
 }
 
-/* レスポンシブ強化（スマホ用） */
-@media (max-width: 768px) {
-  .real-voice-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .voice-box {
+    width: 100%;
+    max-width: none;
   }
-}    
+
+  .voice-text {
+    white-space: nowrap;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 100%;
+  }
+}
     
   </style>
 </head>
