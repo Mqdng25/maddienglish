@@ -291,28 +291,40 @@
     padding: 8px 16px;
   }
 }
-    
-/* 共通スタイル */
-.real-voices .voice-box {
+    /* 各ボックスの見た目調整（余白など） */
+.voice-box {
   padding: 16px 20px;
 }
 
-.real-voices .voice-text {
-  font-size: 0.95rem;
-  word-break: keep-all;
-  line-height: 1.4;
+/* 吹き出しテキストスタイル（共通） */
+.voice-text {
+  font-size: 1.05em;
+  line-height: 1.6;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
-/* ✅ PCでのみ1行に収めるスタイル */
-@media (min-width: 768px) {
-  .voice-text {
-    display: inline-block;
-    font-size: 1.05em;
-    white-space: normal; /* ← 改行OKに戻す */
-    text-align: center;
-    max-width: 90%;
-  }
+/* ボックスのグリッド配置（PC・タブレットで中央揃え） */
+.real-voice-grid {
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
+
+/* レスポンシブ強化（スマホ用） */
+@media (max-width: 768px) {
+  .real-voice-grid {
+    grid-template-columns: 1fr;
+  }
+}    
     
   </style>
 </head>
