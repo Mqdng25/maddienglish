@@ -294,29 +294,30 @@
     /* 各ボックスの見た目調整（余白など） */
 .voice-box {
   padding: 16px 20px;
+  width: 100%;
 }
+    
 
 /* 吹き出しテキストスタイル（共通） */
 .voice-text {
+  max-width: 100%;           /* ← 必須：HTMLの90%指定を上書き */
+  width: 100%;               /* ← ボックスいっぱいに広げる */
   font-size: 1.05em;
   line-height: 1.6;
   text-align: center;
   white-space: normal;
   overflow-wrap: break-word;
-  max-width: 100%;
 }
 
 /* ボックスのグリッド配置（PC・タブレットで中央揃え） */
 .real-voice-grid {
-  max-width: 100%;
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ← ボックス幅を広げる */
   gap: 30px;
-  justify-content: center;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
-  box-sizing: border-box;
+  justify-items: center; /* ← 中央揃えになる決め手！ */
 }
 
 /* レスポンシブ強化（スマホ用） */
@@ -439,7 +440,6 @@
         border-radius: 12px;
         font-style: italic;
         z-index: 2;
-        max-width: 90%;
         backdrop-filter: blur(3px);
       "
     >
@@ -477,7 +477,6 @@
         border-radius: 12px;
         font-style: italic;
         z-index: 2;
-        max-width: 90%;
         backdrop-filter: blur(3px);
       "
     >
@@ -515,7 +514,6 @@
         border-radius: 12px;
         font-style: italic;
         z-index: 2;
-        max-width: 90%;
         backdrop-filter: blur(3px);
       "
     >
@@ -553,7 +551,6 @@
         border-radius: 12px;
         font-style: italic;
         z-index: 2;
-        max-width: 90%;
         backdrop-filter: blur(3px);
       "
     >
