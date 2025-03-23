@@ -388,58 +388,57 @@
   }
 }
     
-.why-maddie-section {
-  background-color: #f6f6f3;
-  padding: 80px 20px 100px;
-  margin-top: 80px; /* ✅ 前のセクションとの距離確保 */
+.why-choose-maddie {
+  background: #f7f7f7;
+  padding: 80px 20px;
 }
 
-.why-maddie-heading {
+.why-title {
   text-align: center;
   font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 48px;
   color: #333;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
-.why-maddie-grid {
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 36px;
-  max-width: 1120px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
-.why-card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #e2e2e2;
+.why-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+.why-item:hover {
+  transform: translateY(-4px);
 }
 
-.why-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+.why-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  opacity: 0.9;
 }
 
-.why-card p {
+.why-item h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.why-item p {
   font-size: 0.95rem;
-  padding: 20px 20px 24px;
+  color: #555;
   line-height: 1.6;
-  color: #444;
-  flex-grow: 1;
 }
     
   </style>
@@ -545,40 +544,49 @@
 </div>
     </div>
     
-<!-- ✅ Maddie English が選ばれる理由（北欧シンプル版） -->
-<section class="why-maddie-section">
-  <h2 class="why-maddie-heading">Maddie English が選ばれる理由</h2>
-  <div class="why-maddie-grid">
-    
-    <div class="why-card">
-      <img src="images/level-text.jpg" alt="教材写真" class="why-image">
+<section class="why-choose-maddie">
+  <h2 class="why-title">Maddie Englishが選ばれる理由</h2>
+  <div class="why-grid">
+
+    <div class="why-item">
+      <img src="icon-book.svg" alt="テキスト" class="why-icon">
+      <h3>レベルに合ったテキスト</h3>
       <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
     </div>
 
-    <div class="why-card">
-      <img src="images/topics.jpg" alt="トピック写真" class="why-image">
-      <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。必要な力をバランスよく伸ばせます。</p>
+    <div class="why-item">
+      <img src="icon-globe.svg" alt="トピック" class="why-icon">
+      <h3>あらゆるトピックを網羅</h3>
+      <p>日常英会話、ビジネス英語、旅行、試験対策まで対応。</p>
     </div>
 
-    <div class="why-card">
-      <img src="images/teacher.jpg" alt="講師の写真" class="why-image">
-      <p>豊富な経験を持つ講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
+    <div class="why-item">
+      <img src="icon-teacher.svg" alt="講師" class="why-icon">
+      <h3>実力派講師の丁寧な指導</h3>
+      <p>経験豊富な講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
     </div>
 
-    <div class="why-card">
-      <img src="images/mobile-app.jpg" alt="スマホ学習写真" class="why-image">
-      <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく英語力を伸ばします。</p>
+    <div class="why-item">
+      <img src="icon-mobile.svg" alt="スマホ" class="why-icon">
+      <h3>スマホでも学べるアプリ教材</h3>
+      <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率的に。</p>
     </div>
 
-    <div class="why-card">
-      <img src="images/feedback.jpg" alt="フィードバック写真" class="why-image">
-      <p>あなたの弱点やクセをしっかり分析。録音や文章への個別アドバイスで着実に上達。</p>
+    <div class="why-item">
+      <img src="icon-edit.svg" alt="フィードバック" class="why-icon">
+      <h3>発音・ライティングの個別フィードバック</h3>
+      <p>録音や文章へのアドバイスで、苦手ポイントを着実に克服。</p>
     </div>
 
-    <div class="why-card">
-      <img src="images/support.jpg" alt="カウンセリング写真" class="why-image">
-      <p>進捗確認・目標設定を一緒に行い、モチベーション維持をサポートします。</p>
+    <div class="why-item">
+      <img src="icon-support.svg" alt="サポート" class="why-icon">
+      <h3>定期カウンセリングで安心サポート</h3>
+      <p>進捗確認や目標設定を一緒に行い、モチベーションを維持できます。</p>
     </div>
+
+  </div>
+</section>
+
 
   </div>
 </section>
