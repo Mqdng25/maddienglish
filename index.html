@@ -388,27 +388,31 @@
   }
 }
     
-.reason-why {
-  background: #fff;
-  padding: 60px 20px;
+.reason-section {
+  background-color: #f8f8f8;
+  padding: 80px 20px;
 }
 
-.reason-container {
-  max-width: 960px;
+.reason-wrapper {
+  max-width: 1040px;
   margin: 0 auto;
-  text-align: center;
+  background-color: #fff;
+  padding: 60px 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
-.reason-why h2 {
-  font-size: 1.8em;
-  margin-bottom: 0.3em;
+.reason-title {
+  font-size: 1.8rem;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-.reason-why .subheading {
-  font-size: 1em;
-  color: #777;
-  margin-bottom: 40px;
+.reason-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 48px;
 }
 
 .reason-grid {
@@ -419,58 +423,66 @@
   border-bottom: none;
 }
 
-.reason-item {
+.reason-box {
+  padding: 30px 20px;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  padding: 30px 20px;
+  text-align: center;
 }
 
-.reason-item img {
+.reason-box img {
   width: 40px;
   height: 40px;
   margin-bottom: 16px;
+  filter: hue-rotate(-10deg) saturate(1.2) brightness(1.1);
 }
 
-.reason-item h3 {
-  font-size: 1em;
+.reason-box h3 {
+  font-size: 1rem;
   font-weight: 600;
+  color: #222;
   margin-bottom: 10px;
-  color: #333;
 }
 
-.reason-item p {
-  font-size: 0.95em;
+.reason-box p {
+  font-size: 0.95rem;
   color: #555;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.view-more-wrapper {
+.reason-button-wrapper {
   margin-top: 40px;
+  text-align: center;
 }
 
-.view-more-button {
-  display: inline-block;
-  background: #1e1e1e;
-  color: white;
+.reason-button {
+  background: #ff6f00;
+  color: #fff;
   padding: 12px 28px;
-  border-radius: 999px;
   font-weight: bold;
+  border-radius: 999px;
   text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
 
-.view-more-button:hover {
-  background: #333;
+.reason-button:hover {
+  background: #e65100;
 }
 
-/* レスポンシブ対応（スマホ） */
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
   .reason-grid {
     grid-template-columns: 1fr;
   }
 
-  .reason-item {
+  .reason-box {
     border-right: none;
+  }
+
+  .reason-wrapper {
+    padding: 40px 20px;
   }
 }
 
@@ -577,46 +589,46 @@
 </div>
     </div>
 
-    <section class="reason-why">
-  <div class="reason-container">
-    <h2>REASON WHY</h2>
-    <p class="subheading">Maddie Englishが選ばれる理由</p>
+  <section class="reason-section">
+  <div class="reason-wrapper">
+    <h2 class="reason-title">REASON WHY</h2>
+    <p class="reason-subtitle">Maddie Englishが選ばれる理由</p>
 
     <div class="reason-grid">
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/346222/book.svg" alt="教材" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/346222/book.svg" alt="" />
         <h3>レベルに合ったテキスト</h3>
         <p>完全初心者から上級者まで、自分のレベルにぴったりの教材で安心して始められます。</p>
       </div>
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/354372/globe-alt.svg" alt="トピック" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/354372/globe-alt.svg" alt="" />
         <h3>あらゆるトピックを網羅</h3>
         <p>日常英会話、ビジネス英語、旅行、試験対策まで幅広く対応。</p>
       </div>
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/382222/teacher.svg" alt="講師" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/382222/teacher.svg" alt="" />
         <h3>実力派講師の丁寧な指導</h3>
         <p>豊富な経験を持つ講師陣が、一人ひとりに寄り添ったレッスンを提供します。</p>
       </div>
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/499982/smartphone.svg" alt="アプリ" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/499982/smartphone.svg" alt="" />
         <h3>スマホでも学べるアプリ教材</h3>
         <p>外出先でも学べる学習アプリ付き。動画とスクリプトで効率よく学習。</p>
       </div>
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/417784/edit-text.svg" alt="フィードバック" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/417784/edit-text.svg" alt="" />
         <h3>発音・ライティングの個別フィードバック</h3>
-        <p>あなたの弱点やクセをしっかり分析し、録音や文章への個別アドバイスを提供。</p>
+        <p>録音や文章への個別アドバイスで、あなたの弱点やクセをしっかり分析。</p>
       </div>
-      <div class="reason-item">
-        <img src="https://www.svgrepo.com/show/493338/chat-2.svg" alt="サポート" />
+      <div class="reason-box">
+        <img src="https://www.svgrepo.com/show/493338/chat-2.svg" alt="" />
         <h3>定期カウンセリングで安心サポート</h3>
         <p>進捗確認・目標設定を一緒に行い、モチベーション維持を支援します。</p>
       </div>
     </div>
 
-    <div class="view-more-wrapper">
-      <a href="#contact" class="view-more-button">VIEW MORE</a>
+    <div class="reason-button-wrapper">
+      <a href="#contact" class="reason-button">VIEW MORE</a>
     </div>
   </div>
 </section>
