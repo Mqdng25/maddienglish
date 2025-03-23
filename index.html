@@ -334,6 +334,24 @@
     max-width: 100%;
   }
 }
+    @media (max-width: 768px) {
+  .real-voice-grid {
+    grid-template-columns: 1fr; /* ← 縦1列に並べる */
+  }
+
+  .voice-box {
+    max-width: 100%;
+  }
+
+  .voice-text {
+    white-space: nowrap; /* ← 改行させない */
+    overflow: visible;   /* ← はみ出しを隠さず表示 */
+    text-overflow: unset;
+    font-size: clamp(0.8rem, 3.5vw, 1.1rem); /* ← 画面幅に応じて自動縮小 */
+    text-align: center;
+    max-width: 100%;
+  }
+}
     
   </style>
 </head>
