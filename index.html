@@ -284,83 +284,84 @@
 .cta-button:hover {
   background-color: #c0392b;
 }
-    @media (max-width: 480px) {
-  .campaign-heading {
-    white-space: normal; /* ← スマホで自然に折り返しOKに */
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-}
-    /* 各ボックスの見た目調整（余白など） */
-.voice-box {
-  padding: 16px 20px;
-  width: 100%;
-  max-width: 400px;
-}   
 
-/* 吹き出しテキストスタイル（共通） */
-    .voice-text {
-  width: 100%;             /* 吹き出しを親ボックスの幅に合わせる */
-  max-width: 80%;          /* 全体に対して80%の横幅に収める */
-  font-size: 1.05em;
-  line-height: 1.6;
+    /* ==== Real Voiceセクション用のスタイル（完全版） ==== */
+
+/* 各ボックス背景画像クラス */
+.voice-bg-1 {
+  background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');
+}
+.voice-bg-2 {
+  background-image: url('https://images.unsplash.com/photo-1622473590827-623629dfe15f?auto=format&fit=crop&w=800&q=80');
+}
+.voice-bg-3 {
+  background-image: url('https://images.unsplash.com/photo-1628191010203-1ce6f7db2965?auto=format&fit=crop&w=800&q=80');
+}
+.voice-bg-4 {
+  background-image: url('https://images.unsplash.com/photo-1534294228305-3c8e93df1e66?auto=format&fit=crop&w=800&q=80');
+}
+
+/* ボックス全体のスタイル */
+.voice-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 280px; /* PCでの高さ固定 */
+}
+
+/* テキスト吹き出し */
+.voice-text {
+  position: relative;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-style: italic;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+  padding: 12px 16px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.4;
+  max-width: 90%;
+  margin: auto;
   white-space: normal;
   overflow-wrap: break-word;
-  box-sizing: border-box;
+  font-size: 1rem;
 }
 
-/* ボックスのグリッド配置（PC・タブレットで中央揃え） */
-.real-voice-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ← ボックス幅を広げる */
-  gap: 30px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 16px;
-  justify-items: center; /* ← 中央揃えになる決め手！ */
+/* 黒の半透明オーバーレイ */
+.voice-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-@media (min-width: 768px) {
+/* スマホ対応 */
+@media (max-width: 768px) {
   .voice-box {
-    width: 100%;
-    max-width: none;
-    height: 280px; /* ✅ PC表示で固定 */
-  }
-
-  .voice-text {
-    white-space: nowrap;
-    text-align: center;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    max-width: 100%;
-  }
-}
-  @media (max-width: 768px) {
-  .real-voice-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .real-voices {
-    overflow-x: hidden; /* ← 念のためセクション全体ではみ出し防止 */
-  }
-
-  .voice-box {
-    max-width: 100%;
     height: auto;
     min-height: 140px;
   }
 
   .voice-text {
-    white-space: nowrap; /* 改行しない */
-    overflow: visible;   /* はみ出しなくす */
-    text-overflow: unset;
-    font-size: clamp(0.7rem, 3.5vw, 1rem); /* ← 小さくして収める */
-    text-align: center;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 10px; /* ← 横幅を抑えるために少し狭める */
+    font-size: clamp(0.7rem, 3.5vw, 0.95rem);
+    padding: 10px 12px;
+    max-width: 95%;
   }
 }
+
     
   </style>
 </head>
@@ -432,146 +433,36 @@
 <div class="real-voice-grid"">
 
   <!-- Real Voice 1 -->
-  <div
-    class="voice-box"
-    style="
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1623691959798-ec47bb1d3ef6?auto=format&fit=crop&w=800&q=80');
-      background-size: cover;
-      background-position: center;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-    "
-  >
-    <div
-      class="voice-text"
-      style="
-        position: relative;
-        color: #fff;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        font-style: italic;
-        z-index: 2;
-        backdrop-filter: blur(3px);
-      "
-    >
-      中学英語もあやふやで、自信がありません。
-    </div>
-    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+ <div class="voice-box voice-bg-1">
+  <div class="voice-text">
+    中学英語もあやふやで、自信がありません。
   </div>
+  <div class="voice-overlay"></div>
+</div>
 
   <!-- Real Voice 2 -->
-  <div
-    class="voice-box"
-    style="
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1622473590827-623629dfe15f?auto=format&fit=crop&w=800&q=80');
-      background-size: cover;
-      background-position: center;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    "
-  >
-    <div
-      class="voice-text"
-      style="
-        position: relative;
-        color: #fff;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        font-style: italic;
-        z-index: 2;
-        backdrop-filter: blur(3px);
-      "
-    >
-      文法はわかるのに話すとなると口が止まる…
-    </div>
-    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+  <div class="voice-box voice-bg-1">
+  <div class="voice-text">
+    文法はわかるのに話すとなると口が止まる…
   </div>
+  <div class="voice-overlay"></div>
+</div>
 
   <!-- Real Voice 3 -->
-  <div
-    class="voice-box"
-    style="
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1628191010203-1ce6f7db2965?auto=format&fit=crop&w=800&q=80');
-      background-size: cover;
-      background-position: center;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    "
-  >
-    <div
-      class="voice-text"
-      style="
-        position: relative;
-        color: #fff;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        font-style: italic;
-        z-index: 2;
-        backdrop-filter: blur(3px);
-      "
-    >
-      発音がカタカナになってしまって通じない…
-    </div>
-    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+  <div class="voice-box voice-bg-1">
+  <div class="voice-text">
+    発音がカタカナになってしまって通じない…
   </div>
+  <div class="voice-overlay"></div>
+</div>
 
   <!-- Real Voice 4 -->
-  <div
-    class="voice-box"
-    style="
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1534294228305-3c8e93df1e66?auto=format&fit=crop&w=800&q=80');
-      background-size: cover;
-      background-position: center;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 rgba(255, 204, 0, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    "
-  >
-    <div
-      class="voice-text"
-      style="
-        position: relative;
-        color: #fff;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        font-style: italic;
-        z-index: 2;
-        backdrop-filter: blur(3px);
-      "
-    >
-      英検や試験のために、総合力を伸ばしたい！
-    </div>
-    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+  <div class="voice-box voice-bg-1">
+  <div class="voice-text">
+    英検や試験のために、総合力を伸ばしたい！
   </div>
+  <div class="voice-overlay"></div>
+</div>
     </div>
   </section>
   <!-- ✅ 教材紹介 -->
