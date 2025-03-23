@@ -362,7 +362,8 @@
 @media (max-width: 768px) {
   .real-voice-grid {
     grid-template-columns: 1fr;
-    gap: 24px; /* ✅ スマホ時の縦の余白も調整 */
+    gap: 20px; /* ✅ ボックス間に余白 */
+    padding: 0 12px; /* ✅ 左右にも余白 */
   }
 
   .voice-box {
@@ -372,12 +373,14 @@
   }
 
   .voice-text {
-    font-size: min(4.2vw, 1rem);      /* ✅ 自動で縮小して1行に収める */
-    padding: 10px 14px;
-    max-width: 95%;
-    white-space: nowrap;              /* ✅ 1行で表示 */
-    overflow: hidden;                 /* ✅ はみ出しを防止 */
-    text-overflow: clip;              /* ✅ 省略せず切らない */
+    white-space: nowrap;              /* 改行させない */
+    overflow: hidden;                 /* はみ出さない */
+    text-overflow: clip;              /* 省略記号「…」も消す */
+    font-size: min(4vw, 1rem);        /* 自動で縮小 */
+    max-width: 100%;                  /* ボックスに収める */
+    padding: 6px 12px;
+    text-align: center;
+    box-sizing: border-box;
   }
 }
     
