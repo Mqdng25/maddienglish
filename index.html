@@ -518,45 +518,6 @@
     padding: 40px 20px;
   }
 }
-    
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-fade-in.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animate-fade-in.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animate-fade-in.delay-300 {
-  animation-delay: 0.3s;
-}
-    .fade-in-on-visible {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.fade-in-on-visible.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
   </style>
 </head>
@@ -674,8 +635,8 @@
 
       <div class="reason-box">
         <img src="https://source.unsplash.com/100x100/?textbook,study" alt="テキスト">
-        <h3>しっかり考えしっかり話す</h3>
-        <p>理解のある日本人バイリインガル講師によるマンツーマンレッスンだからこそ、焦らず話せます。</p>
+        <h3>日本人の傾向を理解したレッスン</h3>
+        <p>日本人バイリインガル講師によるマンツーマンレッスンです。</p>
       </div>
 
       <div class="reason-box">
@@ -715,45 +676,39 @@
     </div>
   </div>
 </section>
-<section class="bg-white py-20">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold text-yellow-600 mb-16">ニーズに合った英語コース</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 justify-items-center">
+<section class="bg-orange-50 py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-orange-600 mb-4">ニーズに合った英語コース</h2>
+    <p class="text-lg text-orange-800 mb-12">目的やレベルに合わせて選べる4つのコース</p>
+
+    <div class="grid md:grid-cols-2 gap-10 text-left">
 
       <!-- やさしい英語入門 -->
-      <div class="bg-yellow-50 rounded-2xl shadow-lg overflow-hidden w-full max-w-sm transform transition duration-500 hover:scale-105 fade-in-on-visible">
-        <img src="/images/beginner.jpg" alt="やさしい英語入門" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-yellow-700 mb-3">やさしい英語入門</h3>
-          <p class="text-gray-700 text-center">初心者でも安心で、0から英語を学ぶコースにする予定です。</p>
-        </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+        <img src="/images/beginner.jpg" alt="やさしい英語入門" class="w-20 h-20 rounded-full mb-4 mx-auto object-cover">
+        <h3 class="text-lg font-bold text-orange-700 mb-2 text-center">やさしい英語入門</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">初心者でも安心で、0から英語を学ぶコースにする予定です。</p>
       </div>
 
       <!-- リスニング＆スピーキング -->
-      <div class="bg-yellow-50 rounded-2xl shadow-lg overflow-hidden w-full max-w-sm transform transition duration-500 hover:scale-105 fade-in-on-visible">
-        <img src="/images/listen-speak.jpg" alt="リスニング＆スピーキング" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-yellow-700 mb-3">リスニング＆スピーキング</h3>
-          <p class="text-gray-700 text-center">コミュニケーションがとれるようになります。</p>
-        </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+        <img src="/images/listen-speak.jpg" alt="リスニング＆スピーキング" class="w-20 h-20 rounded-full mb-4 mx-auto object-cover">
+        <h3 class="text-lg font-bold text-orange-700 mb-2 text-center">リスニング＆スピーキング</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">コミュニケーションがとれるようになります。</p>
       </div>
 
       <!-- 発音トレーニング -->
-      <div class="bg-yellow-50 rounded-2xl shadow-lg overflow-hidden w-full max-w-sm transform transition duration-500 hover:scale-105 fade-in-on-visible">
-        <img src="/images/pronunciation.jpg" alt="発音トレーニング" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-yellow-700 mb-3">発音トレーニング</h3>
-          <p class="text-gray-700 text-center">発音向上に特化。かっこよく話せるようになるだけでなく、リスニング力もアップ。</p>
-        </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+        <img src="/images/pronunciation.jpg" alt="発音トレーニング" class="w-20 h-20 rounded-full mb-4 mx-auto object-cover">
+        <h3 class="text-lg font-bold text-orange-700 mb-2 text-center">発音トレーニング</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">発音向上に特化。かっこよく話せるようになるだけでなく、リスニング力もアップ。</p>
       </div>
 
       <!-- インテンシブ -->
-      <div class="bg-yellow-50 rounded-2xl shadow-lg overflow-hidden w-full max-w-sm transform transition duration-500 hover:scale-105 fade-in-on-visible">
-        <img src="/images/intensive.jpg" alt="インテンシブ" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-yellow-700 mb-3">インテンシブ</h3>
-          <p class="text-gray-700 text-center">話す、聞く、読む、書く、全てのスキルを伸ばしていきます。</p>
-        </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+        <img src="/images/intensive.jpg" alt="インテンシブ" class="w-20 h-20 rounded-full mb-4 mx-auto object-cover">
+        <h3 class="text-lg font-bold text-orange-700 mb-2 text-center">インテンシブ</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">話す、聞く、読む、書く、全てのスキルを伸ばしていきます。</p>
       </div>
 
     </div>
