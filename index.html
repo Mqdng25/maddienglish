@@ -1184,6 +1184,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const steps = document.querySelectorAll(".animate-step");
   const cta = document.querySelector(".animate-cta");
 
+  // ✅ ここを flow-section に変更する！
+  const flowSection = document.querySelector(".flow-section");
+
   let animated = false;
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -1191,7 +1194,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting && !animated) {
         animated = true;
 
-        // 各STEPを順番に表示
+        // ステップ順に表示
         steps.forEach((step, index) => {
           setTimeout(() => {
             step.style.opacity = "1";
@@ -1199,7 +1202,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 300 + index * 400);
         });
 
-        // CTAボタンは最後に
+        // CTAもあとで出す
         if (cta) {
           setTimeout(() => {
             cta.style.opacity = "1";
@@ -1212,11 +1215,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.3 });
 
-  if (steps.length > 0) {
-    observer.observe(steps[0]);
+  if (flowSection) {
+    observer.observe(flowSection); // ✅ flow-section をトリガーに
   }
 });
-</script>
 
 </body>
 </html>
