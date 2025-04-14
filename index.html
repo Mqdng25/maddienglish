@@ -518,6 +518,68 @@
     padding: 40px 20px;
   }
 }
+/* ✅ ご利用の流れ CSS */
+.flow-section {
+  background: #fffdfa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.flow-title h2 {
+  font-size: 1.8em;
+  color: #e67e22;
+  margin-bottom: 8px;
+}
+
+.flow-title p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: #fff;
+  border: 2px solid #ffe0b2;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.5);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+}
+
+.step-number {
+  background-color: #fbc02d;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.step-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
 
   </style>
 </head>
@@ -785,6 +847,37 @@
           <img src="/images/kids.jpg" alt="お子様向け" class="w-full h-full object-cover">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+  
+<!-- ✅ ご利用の流れセクション -->
+<section class="flow-section">
+  <div class="flow-title">
+    <h2>ご利用の流れ</h2>
+    <p>はじめての方も安心。STEPごとに丁寧にご案内します。</p>
+  </div>
+
+  <div class="flow-steps">
+    <div class="step-card">
+      <div class="step-number">STEP 1</div>
+      <h3>無料体験に申し込む</h3>
+      <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">STEP 2</div>
+      <h3>体験レッスン受講</h3>
+      <p>講師とのマンツーマン体験レッスンを通じて雰囲気を体感。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">STEP 3</div>
+      <h3>学習プランのご提案</h3>
+      <p>レベルや目標に応じて、最適なコースをご案内します。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">STEP 4</div>
+      <h3>レッスンスタート！</h3>
+      <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
     </div>
   </div>
 </section>
