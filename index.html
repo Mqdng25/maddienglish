@@ -626,6 +626,50 @@
   background: #ccc;
   border-radius: 4px;
 }
+    /* フェードイン＋上からスライド */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA用ポップアップ */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* アニメーションクラス */
+.animate-step {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-cta {
+  opacity: 0;
+  animation: popIn 0.6s ease forwards;
+}
+
+/* 遅延（順番に出す） */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 1s; }
+.delay-4 { animation-delay: 1.4s; }
+.delay-cta { animation-delay: 2s; }
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
@@ -806,47 +850,42 @@
     <p>はじめての方も安心。STEPごとに丁寧にご案内します。</p>
   </div>
 
-  <div class="flow-steps">
-    <!-- STEP 1 -->
-    <div class="step-card">
-      <div class="step-number">STEP 1</div>
-      <h3>無料体験に申し込む</h3>
-      <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
-    </div>
-
-    <div class="flow-arrow">→</div>
-
-    <!-- STEP 2 -->
-    <div class="step-card">
-      <div class="step-number">STEP 2</div>
-      <h3>体験レッスン受講</h3>
-      <p>講師とのマンツーマンレッスンを通じて雰囲気を体感。</p>
-    </div>
-
-    <div class="flow-arrow">→</div>
-
-    <!-- STEP 3 -->
-    <div class="step-card">
-      <div class="step-number">STEP 3</div>
-      <h3>学習プランのご提案</h3>
-      <p>レベルや目標に応じて、最適なコースをご案内します。</p>
-    </div>
-
-    <div class="flow-arrow">→</div>
-
-    <!-- STEP 4 -->
-    <div class="step-card final-step highlight">
-      <div class="step-number">STEP 4</div>
-      <h3>レッスンスタート！</h3>
-      <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
-    </div>
+ <div class="flow-steps">
+  <div class="step-card animate-step delay-1">
+    <div class="step-number">STEP 1</div>
+    <h3>無料体験に申し込む</h3>
+    <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
   </div>
 
-  <!-- CTAボタン -->
-  <div class="cta-button-wrapper">
-    <a href="#contact" class="flow-cta">無料体験レッスンを申し込む</a>
+  <div class="flow-arrow">→</div>
+
+  <div class="step-card animate-step delay-2">
+    <div class="step-number">STEP 2</div>
+    <h3>体験レッスン受講</h3>
+    <p>講師とのマンツーマン体験レッスンを通じて雰囲気を体感。</p>
   </div>
-</section>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="step-card animate-step delay-3">
+    <div class="step-number">STEP 3</div>
+    <h3>学習プランのご提案</h3>
+    <p>レベルや目標に応じて、最適なコースをご案内します。</p>
+  </div>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="step-card final-step highlight animate-step delay-4">
+    <div class="step-number">STEP 4</div>
+    <h3>レッスンスタート！</h3>
+    <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
+  </div>
+</div>
+
+<!-- ボタンに pop アニメーション -->
+<div class="cta-button-wrapper">
+  <a href="#contact" class="flow-cta animate-cta delay-cta">無料体験レッスンを申し込む</a>
+</div>
 
 <section class="bg-orange-50 py-16">
   <style>
