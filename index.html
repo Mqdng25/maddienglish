@@ -1131,16 +1131,26 @@
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const steps = document.querySelectorAll(".animate-step");
-    const cta = document.querySelector(".animate-cta");
-    const triggerElement = document.querySelector(".flow-section"); // 監視対象
+    const trigger = document.getElementById("confetti-trigger");
 
-    let animated = false;
+    if (trigger) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            confetti({
+              particleCount: 100,
+              spread: 160,
+              origin: { y: 0.6 }
+            });
+            obs.unobserve(entry.target); // 1回だけ実行
+          }
+        });
+      }, { threshold: 0.6 });
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
+      observer.observe(trigger);
+    }
+  });
+</script>
 
           // 各ステップを順番に表示
           steps.forEach((step, index) => {
