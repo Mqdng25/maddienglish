@@ -1120,25 +1120,32 @@
 
 <!-- ✅ キャンペーン紙吹雪アニメーション -->
 <script>
-  window.addEventListener("load", function () {
-    const trigger = document.getElementById("confetti-trigger");
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector(".cta-button"); // ← 今すぐ申し込むボタン
 
-    if (trigger) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            confetti({
-              particleCount: 120,
-              spread: 160,
-              origin: { y: 0.6 }
-            });
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.6 });
+    if (!button) return;
 
-      observer.observe(trigger);
-    }
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // ボタンの位置を取得して発射位置を決定
+          const rect = button.getBoundingClientRect();
+          const x = (rect.left + rect.width / 2) / window.innerWidth;
+          const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+          // 花吹雪発射！
+          confetti({
+            particleCount: 100,
+            spread: 160,
+            origin: { x: x, y: y }
+          });
+
+          obs.unobserve(entry.target); // 一度だけ実行
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(button);
   });
 </script>
 
