@@ -594,11 +594,12 @@
   align-self: center;
 }
 
-/* CTAボタン */
+/* CTAボタンのラッパー */
 .cta-button-wrapper {
   margin-top: 40px;
 }
 
+/* 無料体験ボタン（ポップバウンスアニメーション付き） */
 .flow-cta {
   background-color: #e67e22;
   color: #fff;
@@ -608,6 +609,11 @@
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.1s ease;
+
+  /* 🎯 アニメーション追加 */
+  animation: popBounce 0.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 2s;
 }
 
 .flow-cta:hover {
@@ -626,7 +632,8 @@
   background: #ccc;
   border-radius: 4px;
 }
-    /* フェードイン＋上からスライド */
+
+/* フェードイン＋上からスライド */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -638,41 +645,28 @@
   }
 }
 
-/* CTA用ポップアップ */
-@keyframes popIn {
+/* ポップバウンスアニメーション（✨目立つ） */
+@keyframes popBounce {
   0% {
+    transform: scale(0.8);
     opacity: 0;
-    transform: scale(0.9);
   }
-  60% {
+  50% {
+    transform: scale(1.1);
     opacity: 1;
-    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
   }
 }
 
-/* アニメーションクラス */
+/* アニメーションクラス（ステップ用） */
 .animate-step {
-  animation: none; /* ← 自動再生防止！ */
-  opacity: 0;
-}
-
-
-.animate-cta {
   animation: none;
   opacity: 0;
 }
 
-/* 遅延（順番に出す） */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 1s; }
-.delay-4 { animation-delay: 1.4s; }
-.delay-cta { animation-delay: 2s; }
-
-/* レスポンシブ対応 */
+/* スマホ対応 */
 @media (max-width: 768px) {
   .flow-steps {
     flex-direction: column;
