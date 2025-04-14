@@ -520,7 +520,7 @@
 }
 /* ✅ ご利用の流れ CSS */
 .flow-section {
-  background: #fffdfa;
+  background: #fff6e0; /* ← 背景色を淡く変えて区別 */
   padding: 60px 20px;
   text-align: center;
 }
@@ -537,21 +537,23 @@
   margin-bottom: 40px;
 }
 
+/* 上部の3ステップ */
 .flow-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
+/* カード共通 */
 .step-card {
   background: #fff;
   border: 2px solid #ffe0b2;
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 24px 16px;
+  width: 260px;
   box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.5);
-  position: relative;
   transition: transform 0.2s ease;
 }
 
@@ -579,6 +581,41 @@
 .step-card p {
   font-size: 0.95rem;
   color: #555;
+}
+
+/* 矢印スタイル */
+.flow-arrow {
+  font-size: 2rem;
+  color: #ffa000;
+  margin: 0 10px;
+}
+.flow-arrow.down {
+  margin: 20px auto;
+  font-size: 2.4rem;
+}
+
+/* 最終ステップ */
+.final-step {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .flow-steps {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+
+  .flow-arrow.down {
+    transform: none;
+  }
 }
 
   </style>
@@ -640,7 +677,52 @@
 
   </div>
 </section>
+  
+<section class="flow-section">
+  <div class="flow-title">
+    <h2>ご利用の流れ</h2>
+    <p>はじめての方も安心。STEPごとに丁寧にご案内します。</p>
+  </div>
 
+  <div class="flow-steps">
+    <!-- STEP 1 -->
+    <div class="step-card">
+      <div class="step-number">STEP 1</div>
+      <h3>無料体験に申し込む</h3>
+      <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
+    </div>
+
+    <!-- 矢印 -->
+    <div class="flow-arrow">→</div>
+
+    <!-- STEP 2 -->
+    <div class="step-card">
+      <div class="step-number">STEP 2</div>
+      <h3>体験レッスン受講</h3>
+      <p>講師とのマンツーマン体験レッスンを通じて雰囲気を体感。</p>
+    </div>
+
+    <!-- 矢印 -->
+    <div class="flow-arrow">→</div>
+
+    <!-- STEP 3 -->
+    <div class="step-card">
+      <div class="step-number">STEP 3</div>
+      <h3>学習プランのご提案</h3>
+      <p>レベルや目標に応じて、最適なコースをご案内します。</p>
+    </div>
+  </div>
+
+  <!-- 縦向き矢印 -->
+  <div class="flow-arrow down">↓</div>
+
+  <!-- STEP 4（中央） -->
+  <div class="step-card final-step">
+    <div class="step-number">STEP 4</div>
+    <h3>レッスンスタート！</h3>
+    <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
+  </div>
+</section>
 
   <!-- ✅ こんな方におすすめ（Real Voice 上2・下2） -->
   <section class="real-voices">
@@ -847,37 +929,6 @@
           <img src="/images/kids.jpg" alt="お子様向け" class="w-full h-full object-cover">
         </div>
       </div>
-    </div>
-  </div>
-</section>
-  
-<!-- ✅ ご利用の流れセクション -->
-<section class="flow-section">
-  <div class="flow-title">
-    <h2>ご利用の流れ</h2>
-    <p>はじめての方も安心。STEPごとに丁寧にご案内します。</p>
-  </div>
-
-  <div class="flow-steps">
-    <div class="step-card">
-      <div class="step-number">STEP 1</div>
-      <h3>無料体験に申し込む</h3>
-      <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">STEP 2</div>
-      <h3>体験レッスン受講</h3>
-      <p>講師とのマンツーマン体験レッスンを通じて雰囲気を体感。</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">STEP 3</div>
-      <h3>学習プランのご提案</h3>
-      <p>レベルや目標に応じて、最適なコースをご案内します。</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">STEP 4</div>
-      <h3>レッスンスタート！</h3>
-      <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
     </div>
   </div>
 </section>
