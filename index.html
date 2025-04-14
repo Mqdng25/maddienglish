@@ -1130,95 +1130,45 @@
 </script>
 <!-- ✅ 紙吹雪の実行コード（bodyの一番下） -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const triggerButton = document.querySelector('.cta-button'); // 「今すぐ申し込む」ボタン
-    const originElement = document.getElementById('confetti-trigger'); // 発射位置の要素（価格表示）
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".animate-step");
+    const cta = document.querySelector(".animate-cta");
+    const triggerElement = document.querySelector(".flow-section"); // 監視対象
 
-    if (!triggerButton || !originElement) return;
+    let animated = false;
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const rect = originElement.getBoundingClientRect();
-          const yPos = rect.top / window.innerHeight;
+        if (entry.isIntersecting && !animated) {
+          animated = true;
 
-          confetti({
-            particleCount: 100,
-            spread: 80,
-            origin: {
-              x: 0.5,
-              y: yPos
-            }
+          // 各ステップを順番に表示
+          steps.forEach((step, index) => {
+            setTimeout(() => {
+              step.style.opacity = "1";
+              step.style.animationPlayState = "running";
+            }, 300 + index * 400);
           });
 
-          observer.unobserve(entry.target); // 一度だけ発射
+          // CTAボタンを最後に表示
+          if (cta) {
+            setTimeout(() => {
+              cta.style.opacity = "1";
+              cta.style.animationPlayState = "running";
+            }, 300 + steps.length * 400);
+          }
+
+          obs.unobserve(triggerElement); // 一度だけ実行
         }
       });
-    }, {
-      threshold: 0.6
-    });
+    }, { threshold: 0.2 });
 
-    observer.observe(triggerButton);
+    if (triggerElement) {
+      observer.observe(triggerElement);
+    }
   });
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const targets = document.querySelectorAll('.fade-in-on-visible');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  targets.forEach(target => observer.observe(target));
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".animate-step");
-  const cta = document.querySelector(".animate-cta");
-
-  // ✅ ここを flow-section に変更する！
-  const flowSection = document.querySelector(".flow-section");
-
-  let animated = false;
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-
-        // ステップ順に表示
-        steps.forEach((step, index) => {
-          setTimeout(() => {
-            step.style.opacity = "1";
-            step.style.animationPlayState = "running";
-          }, 300 + index * 400);
-        });
-
-        // CTAもあとで出す
-        if (cta) {
-          setTimeout(() => {
-            cta.style.opacity = "1";
-            cta.style.animationPlayState = "running";
-          }, 300 + steps.length * 400);
-        }
-
-        obs.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  if (flowSection) {
-    observer.observe(flowSection); // ✅ flow-section をトリガーに
-  }
-});
 
 </body>
 </html>
