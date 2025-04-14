@@ -541,7 +541,7 @@
 /* 横並びステップ */
 .flow-steps {
   display: flex;
-  flex-wrap: wrap;  /* ✅ はみ出し防止 */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
@@ -555,7 +555,7 @@
   padding: 24px 16px;
   width: 240px;
   box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.5);
-  transition: none; /* ✅ hover 無効化 */
+  transition: none;
 }
 
 .step-number {
@@ -599,7 +599,7 @@
   margin-top: 40px;
 }
 
-/* 無料体験ボタン（ポップバウンスアニメーション付き） */
+/* 🎯 無料体験ボタン（強バウンスアニメ付き） */
 .flow-cta {
   background-color: #e67e22;
   color: #fff;
@@ -610,8 +610,7 @@
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.1s ease;
 
-  /* 🎯 アニメーション追加 */
-  animation: popBounce 0.6s ease-out forwards;
+  animation: bouncePop 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   opacity: 0;
   animation-delay: 2s;
 }
@@ -624,7 +623,7 @@
   transform: scale(0.97);
 }
 
-/* スクロール用に少し余裕 */
+/* スクロールバー */
 .flow-steps::-webkit-scrollbar {
   height: 8px;
 }
@@ -645,28 +644,31 @@
   }
 }
 
-/* ポップバウンスアニメーション（✨目立つ） */
-@keyframes popBounce {
+/* 💥 バウンス付きポップアニメーション */
+@keyframes bouncePop {
   0% {
-    transform: scale(0.8);
+    transform: scale(0.6);
     opacity: 0;
   }
-  50% {
-    transform: scale(1.1);
+  60% {
+    transform: scale(1.2);
     opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
   }
   100% {
     transform: scale(1);
   }
 }
 
-/* アニメーションクラス（ステップ用） */
+/* ステップカード非表示状態 */
 .animate-step {
   animation: none;
   opacity: 0;
 }
 
-/* スマホ対応 */
+/* モバイル対応 */
 @media (max-width: 768px) {
   .flow-steps {
     flex-direction: column;
@@ -681,6 +683,7 @@
     transform: none;
   }
 }
+
 
   </style>
 </head>
