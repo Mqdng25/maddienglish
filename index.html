@@ -655,14 +655,13 @@
 
 /* アニメーションクラス */
 .animate-step {
-  animation: fadeInUp 0.8s ease forwards;
-  animation-play-state: paused;
+  animation: none; /* ← 自動再生防止！ */
   opacity: 0;
 }
 
+
 .animate-cta {
-  animation: popIn 0.6s ease forwards;
-  animation-play-state: paused;
+  animation: none;
   opacity: 0;
 }
 
@@ -1160,19 +1159,17 @@
         if (entry.isIntersecting && !animated) {
           animated = true;
 
-          // 各ステップを順に表示
           steps.forEach((step, index) => {
             setTimeout(() => {
               step.style.opacity = "1";
-              step.style.animationPlayState = "running";
+              step.style.animation = "fadeInUp 0.8s ease forwards";
             }, 300 + index * 400);
           });
 
-          // CTAボタンを表示
           if (cta) {
             setTimeout(() => {
               cta.style.opacity = "1";
-              cta.style.animationPlayState = "running";
+              cta.style.animation = "popIn 0.6s ease forwards";
             }, 300 + steps.length * 400);
           }
 
