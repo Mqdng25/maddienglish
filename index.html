@@ -519,48 +519,43 @@
   }
 }
     /* ✅ ご利用の流れ CSS */
+/* flow-section 全体 */
 .flow-section {
-  background: #fff6e0; /* ← 背景色を淡く変えて区別 */
+  background: #fff6e0;
   padding: 60px 20px;
   text-align: center;
 }
 
+/* タイトル */
 .flow-title h2 {
   font-size: 1.8em;
   color: #e67e22;
   margin-bottom: 8px;
 }
-
 .flow-title p {
   color: #555;
   font-size: 1rem;
   margin-bottom: 40px;
 }
 
-/* 横並び用 */
+/* 横並びステップ */
 .flow-steps {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;  /* ✅ はみ出し防止 */
   justify-content: center;
-  align-items: stretch;
-  gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-/* カード共通 */
+/* カード */
 .step-card {
   background: #fff;
   border: 2px solid #ffe0b2;
   border-radius: 12px;
   padding: 24px 16px;
-  width: 260px;
+  width: 240px;
   box-shadow: 4px 4px 0 rgba(255, 204, 0, 0.5);
-  transition: transform 0.2s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-6px);
+  transition: none; /* ✅ hover 無効化 */
 }
 
 .step-number {
@@ -585,23 +580,42 @@
   color: #555;
 }
 
-/* 矢印スタイル */
+/* 強調STEP4 */
+.highlight {
+  background-color: #fffde7;
+  border: 2px solid #ffd54f;
+  box-shadow: 6px 6px 0 rgba(255, 204, 0, 0.7);
+}
+
+/* 矢印 */
 .flow-arrow {
   font-size: 2rem;
   color: #ffa000;
-  margin: 0 10px;
-}
-.flow-arrow.down {
-  margin: 20px auto;
-  font-size: 2.4rem;
+  align-self: center;
 }
 
-/* 最終ステップ */
-.highlight {
-  background-color: #fff3cd;
-  border: 2px solid #ffca28;
-  box-shadow: 0 0 0 4px #ffe9a7 inset;
-  transform: scale(1.05);
+/* CTAボタン */
+.cta-button-wrapper {
+  margin-top: 40px;
+}
+
+.flow-cta {
+  background-color: #e67e22;
+  color: #fff;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 999px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.flow-cta:hover {
+  background-color: #d35400;
+}
+
+.flow-cta:active {
+  transform: scale(0.97);
 }
 
 /* スクロール用に少し余裕 */
@@ -786,7 +800,7 @@
   </div>
 </section>
   
-  <section class="flow-section">
+<section class="flow-section">
   <div class="flow-title">
     <h2>ご利用の流れ</h2>
     <p>はじめての方も安心。STEPごとに丁寧にご案内します。</p>
@@ -800,7 +814,6 @@
       <p>まずはフォームからお気軽に無料体験をご予約ください。</p>
     </div>
 
-    <!-- 矢印 -->
     <div class="flow-arrow">→</div>
 
     <!-- STEP 2 -->
@@ -810,7 +823,6 @@
       <p>講師とのマンツーマン体験レッスンを通じて雰囲気を体感。</p>
     </div>
 
-    <!-- 矢印 -->
     <div class="flow-arrow">→</div>
 
     <!-- STEP 3 -->
@@ -820,15 +832,20 @@
       <p>レベルや目標に応じて、最適なコースをご案内します。</p>
     </div>
 
-    <!-- 矢印 -->
     <div class="flow-arrow">→</div>
 
-<div class="step-card final-step highlighted">
-    <div class="step-number">STEP 4</div>
-    <h3>レッスンスタート！</h3>
-    <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
+    <!-- STEP 4 -->
+    <div class="step-card final-step highlight">
+      <div class="step-number">STEP 4</div>
+      <h3>レッスンスタート！</h3>
+      <p>ご都合に合わせて、楽しく学びながら英語力アップ！</p>
+    </div>
   </div>
-</div>
+
+  <!-- CTAボタン -->
+  <div class="cta-button-wrapper">
+    <a href="#contact" class="flow-cta">無料体験レッスンを申し込む</a>
+  </div>
 </section>
 
 <section class="bg-orange-50 py-16">
