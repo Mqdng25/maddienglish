@@ -537,13 +537,15 @@
   margin-bottom: 40px;
 }
 
-/* 上部の3ステップ */
+/* 横並び用 */
 .flow-steps {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
-  gap: 16px;
+  align-items: stretch;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 /* カード共通 */
@@ -595,13 +597,20 @@
 }
 
 /* 最終ステップ */
-.final-step {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 300px;
-  background-color: #fff9e6;
-  border: 2px solid #ffd180;
+.highlight {
+  background-color: #fff3cd;
+  border: 2px solid #ffca28;
+  box-shadow: 0 0 0 4px #ffe9a7 inset;
+  transform: scale(1.05);
+}
+
+/* スクロール用に少し余裕 */
+.flow-steps::-webkit-scrollbar {
+  height: 8px;
+}
+.flow-steps::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
 }
 
 /* レスポンシブ対応 */
