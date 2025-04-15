@@ -921,6 +921,24 @@
       width: 100%;
       text-align: center;
     }
+    
+    /* 最初は非表示 */
+.animate-course {
+  opacity: 0;
+}
+
+/* アニメーションスタイル（すでにある fadeInUp を再利用） */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
   
   <div class="max-w-4xl mx-auto px-4">
@@ -929,7 +947,7 @@
 
     <div class="space-y-0">
       <!-- インテンシブコース -->
-      <div class="flex flex-col md:flex-row items-stretch h-80">
+      <div class="flex flex-col md:flex-row items-stretch h-80 course-block animate-course delay-1">
         <div class="w-full md:w-1/2 px-3 py-3">
           <div class="course-text-container">
             <div class="text-block">
@@ -947,7 +965,7 @@
       </div>
 
       <!-- やさしい英語入門 -->
-      <div class="flex flex-col md:flex-row-reverse items-stretch h-80">
+      <div class="flex flex-col md:flex-row-reverse items-stretch h-80 course-block animate-course delay-2">
         <div class="w-full md:w-1/2 px-3 py-3">
           <div class="course-text-container">
             <div class="text-block">
@@ -965,7 +983,7 @@
       </div>
 
       <!-- 発音トレーニング（画像右） -->
-      <div class="flex flex-col md:flex-row items-stretch h-80">
+      <div class="flex flex-col md:flex-row items-stretch h-80 course-block animate-course delay-3">
         <div class="w-full md:w-1/2 px-3 py-3">
           <div class="course-text-container">
             <div class="text-block">
@@ -983,7 +1001,7 @@
       </div>
 
       <!-- お子様向けコース（教室） -->
-      <div class="flex flex-col md:flex-row-reverse items-stretch h-80">
+      <div class="flex flex-col md:flex-row-reverse items-stretch h-80 course-block animate-course delay-4">
         <div class="w-full md:w-1/2 px-3 py-3">
           <div class="course-text-container">
             <div class="text-block">
@@ -1192,6 +1210,35 @@
     }
   });
 </script>
-  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const courses = document.querySelectorAll(".animate-course");
+    const courseTrigger = document.querySelector(".custom-course-bg");
+
+    let courseAnimated = false;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !courseAnimated) {
+          courseAnimated = true;
+
+          courses.forEach((course, index) => {
+            setTimeout(() => {
+              course.style.opacity = "1";
+              course.style.animation = "fadeInUp 0.8s ease forwards";
+            }, index * 500);
+          });
+
+          obs.unobserve(courseTrigger);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (courseTrigger) {
+      observer.observe(courseTrigger);
+    }
+  });
+</script>
+
 </body>
 </html>
