@@ -19,7 +19,7 @@
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
-      max-width: 700px;
+      max-width: 900px;
       margin: auto;
     }
     h1 {
@@ -45,10 +45,20 @@
 </head>
 <body>
   <h1>国分寺で気軽に英会話！</h1>
-  <div class="section">
-    <p>英語初心者・ブランクがある方も大歓迎！</p>
-    <p>カフェのようなリラックスした雰囲気で、楽しく英語を話してみませんか？</p>
+  <div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+    <!-- 左側：説明 -->
+    <div style="flex: 1;">
+      <h2>🎉 イベントのご案内</h2>
+      <p>英語初心者の方も大歓迎！国分寺で開催するリラックスした英会話イベントです。</p>
+      <p>自己紹介、簡単な会話フレーズ、講師サポート付き。</p>
+    </div>
+
+    <!-- 右側：画像 -->
+    <div style="flex: 0 0 300px;">
+      <img src="/poster.jpg" alt="イベントポスター" style="width: 100%; border-radius: 10px;" />
+    </div>
   </div>
+
   <div class="section">
     <h2>📍 イベント詳細</h2>
     <ul>
@@ -58,6 +68,7 @@
       <li><strong>参加費：</strong>無料（先着10名）</li>
     </ul>
   </div>
+
   <div class="section">
     <h2>🎯 内容</h2>
     <ul>
@@ -66,6 +77,7 @@
       <li>講師によるサポートあり（日本語OK）</li>
     </ul>
   </div>
+
   <div class="section">
     <h2>📝 参加方法</h2>
     <p>下記ボタンからMeetupページにアクセスして「参加」をクリックしてください。</p>
@@ -73,6 +85,7 @@
       <a href="https://www.meetup.com/話せる-分かる-大人のための英語の授業/events/307259265/" target="_blank" class="cta">▶ Meetupページを見る</a>
     </p>
   </div>
+
   <footer>
     <p>主催：英語カフェ 国分寺｜お問い合わせは DM またはLINEから</p>
   </footer>
