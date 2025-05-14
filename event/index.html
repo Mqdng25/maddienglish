@@ -14,11 +14,13 @@
   </script>
   <style>
     body {
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-      margin: 0;
-      background: #f5f5f0;
+      font-family: sans-serif;
+      padding: 2em;
+      background-color: #f9f9f9;
       color: #333;
-      line-height: 1.8;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
     }
     .title-box {
       background: #d6f5d6;
@@ -29,60 +31,44 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2em;
       margin: 0;
-      font-weight: bold;
-    }
-    main {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem 1rem;
     }
     .section {
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
-      padding: 2rem;
-    }
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      padding: 1.5em;
+      margin-bottom: 2em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     .flex-container {
       display: flex;
+      align-items: flex-start;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 2rem;
+    }
+    .flex-text {
+      flex: 1;
     }
     .flex-image {
       flex: 0 0 500px;
     }
     .flex-image img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 10px;
     }
-    .flex-text {
-      flex: 1;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 1rem;
+    .cta {
       background: #007bff;
-      color: #fff;
-      padding: 1rem 2rem;
+      color: white;
+      padding: 1em;
       border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .cta-button:hover {
-      background: #0056b3;
-    }
-    footer {
       text-align: center;
-      font-size: 0.9rem;
-      padding: 2rem 1rem;
-      color: #666;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta:hover {
+      background: #0056b3;
     }
     .center {
       text-align: center;
@@ -93,49 +79,50 @@
   <div class="title-box">
     <h1>国分寺で気軽に英会話！</h1>
   </div>
-  <main>
-    <div class="section flex-container">
-      <div class="flex-text">
-        <h2>🎉 イベントのご案内</h2>
-        <p>英語初心者の方も大歓迎！国分寺で開催するリラックスした英会話イベントです。</p>
-        <p>自己紹介、簡単な会話フレーズ、講師サポート付き。</p>
 
-        <div class="section">
-          <h2>📍 イベント詳細</h2>
-          <ul>
-            <li><strong>日時：</strong>毎週土曜 10:00〜11:00</li>
-            <li><strong>場所：</strong>国分寺駅 徒歩8分「カフェといろいろびより」</li>
-            <li><strong>対象：</strong>社会人・主婦・学生など英語を話したい方</li>
-            <li><strong>参加費：</strong>無料（先着10名）</li>
-          </ul>
-        </div>
+  <div class="section flex-container">
+    <!-- 左側：説明＋詳細 -->
+    <div class="flex-text">
+      <h2>🎉 イベントのご案内</h2>
+      <p>英語初心者の方も大歓迎！国分寺で開催するリラックスした英会話イベントです。</p>
+      <p>自己紹介、簡単な会話フレーズ、講師サポート付き。</p>
 
-        <div class="section">
-          <h2>🎯 内容</h2>
-          <ul>
-            <li>ウォームアップの自己紹介</li>
-            <li>やさしい英語フレーズで会話練習</li>
-            <li>講師によるサポートあり（日本語OK）</li>
-          </ul>
-        </div>
+      <div class="section">
+        <h2>📍 イベント詳細</h2>
+        <ul>
+          <li><strong>日時：</strong>毎週土曜 10:00〜11:00</li>
+          <li><strong>場所：</strong>国分寺駅 徒歩8分「カフェといろいろびより」</li>
+          <li><strong>対象：</strong>社会人・主婦・学生など英語を話したい方</li>
+          <li><strong>参加費：</strong>無料（先着10名）</li>
+        </ul>
       </div>
 
-      <div class="flex-image">
-        <img src="/poster.jpg" alt="イベントポスター" />
+      <div class="section">
+        <h2>🎯 内容</h2>
+        <ul>
+          <li>ウォームアップの自己紹介</li>
+          <li>やさしい英語フレーズで会話練習</li>
+          <li>講師によるサポートあり（日本語OK）</li>
+        </ul>
       </div>
     </div>
 
-    <div class="section center">
-      <h2>📝 参加方法</h2>
-      <p>下記ボタンからMeetupページにアクセスして「参加」をクリックしてください。</p>
-      <p>
-        <a href="https://www.meetup.com/話せる-分かる-大人のための英語の授業/events/307259265/" target="_blank" class="cta-button">▶ Meetupページを見る</a>
-      </p>
+    <!-- 右側：画像 -->
+    <div class="flex-image">
+      <img src="/poster.jpg" alt="イベントポスター" />
     </div>
-  </main>
+  </div>
+
+  <div class="section center">
+    <h2>📝 参加方法</h2>
+    <p>下記ボタンからMeetupページにアクセスして「参加」をクリックしてください。</p>
+    <p>
+      <a href="https://www.meetup.com/話せる-分かる-大人のための英語の授業/events/307259265/" target="_blank" class="cta">▶ Meetupページを見る</a>
+    </p>
+  </div>
 
   <footer>
-    主催：英語カフェ 国分寺｜お問い合わせは DM またはLINEから
+    <p>主催：英語カフェ 国分寺｜お問い合わせは DM またはLINEから</p>
   </footer>
 </body>
 </html>
